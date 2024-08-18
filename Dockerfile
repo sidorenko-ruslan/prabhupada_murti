@@ -68,7 +68,6 @@ RUN useradd rails --create-home --shell /bin/bash && \
 USER rails:rails
 
 RUN bundle exec rake assets:precompile
-RUN yarn build:css --watch
 
 # Entrypoint prepares the database.
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
