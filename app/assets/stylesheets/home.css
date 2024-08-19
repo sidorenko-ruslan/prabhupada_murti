@@ -1,3 +1,387 @@
 body {
-    background-color: #bfa586;
-}
+    background-color: #F8F5F1;
+    font-family: 'Inter';
+    font-size: 16px;
+  }
+  
+  h2 h3 h4 {
+    font-family: 'PT Serif Caption';
+    color: #484542;
+  }
+  
+  .main-caption {
+    font-size: 32px;
+    color: #484542;
+  }
+  
+  .small-text-buy-form {
+    font-size: 12px;
+  }
+  
+  .buy-rectangle {
+    border-radius: 50px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #6E6051;
+  }
+  
+  .additional-caption {
+    font-size: 24px;
+    color: #484542;
+  }
+  
+  .additional-caption-sm {
+    font-size: 18px;
+    color: #484542;
+    font-weight: bold;
+  }
+  
+  .main-text {
+    font-size: 24px;
+    color: #484542;
+  }
+  
+  p {
+    color: #484542;
+  }
+  
+  .text-content-bold {
+    font-weight: bold;
+  }
+  
+  .navbar {
+    height: 6rem;
+    color: #6E6051;
+  }
+  
+  .content-block {
+    height: 35rem;
+  }
+  
+  .content-btn {
+    width: 14rem;
+    height: 3rem;
+    font-size: 16px !important;
+  }
+  
+  .content-btn-wide {
+    width: 18rem;
+    height: 3rem;
+    font-size: 16px !important;
+  }
+  
+  .content-block-padding {
+    padding-left: 8rem;
+  }
+  
+  .content-block-white {
+    background-color: #FCFBF9;
+  }
+  
+  .main-images-block {
+    position: relative;
+  }
+  
+  .main-image-cube {
+    position: absolute;
+    top: 6rem;
+    left: 0;
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+  }
+  
+  .main-pattern-image-right {
+    position: relative;
+    float: right;
+    top: 0;
+    z-index: 0;
+    margin-top: -7rem;
+  }
+  
+  .main-image-murti {
+    position: absolute;
+    top: -5rem;
+    left: -9rem;
+    transform: scale(0.8);
+    z-index: 1;
+    max-width: 100%;
+  }
+  
+  
+  .main-info-background {
+    background-image: url("main-info-background.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    z-index: -1;
+  }
+  
+  .main-video-content {
+    padding: 5rem 16rem;
+    height: 100%;
+    background-image: url("video-frame.png");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  .contacts-background {
+    background-image: url("contacts-pattern.png");
+    background-repeat: no-repeat;
+    background-size: 90%;
+    background-position: right;
+  }
+  
+  .contacts-image {
+    position: absolute;
+    bottom: 4rem;
+    left: 3rem;
+    max-width: 100%;
+  }
+  
+  .contacts-image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .achievements-video-content {
+    margin-top: -2rem;
+    height: 100%;
+  }
+  
+  .gbc-member-video-content {
+    height: 100%;
+  }
+  
+  .height-big {
+    height: 80%;
+  }
+  
+  .height-bigger {
+    height: 85%;
+  }
+  
+  .gbc-member-video-frame {
+    height: 95%;
+    border-radius: 8px;
+  }
+  
+  .main-video-frame {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+  }
+  
+  .achievements-video-frame {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+  }
+  
+  .contacts-country {
+    color: #484542;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 21px;
+  }
+  
+  .contacts-line {
+    border-style: dotted;
+  }
+  
+  .contacts-name {
+    color: #484542;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 26px;
+  }
+  
+  .contacts-form {
+    background-color: white;
+    padding: 2rem;
+    height: 90%;
+  }
+  
+  .video-row {
+    flex-wrap: nowrap!important;
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+  
+  /* .container-fluid {
+    border: solid cadetblue;
+    border-color: black;
+    border-width: 3px;
+  #} */
+  
+  .video-info {
+    background-image: url("video-frame.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 650px;
+  }
+  
+  .btn-link-questions {
+    color: #6E6051;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px;
+    text-decoration: none;
+  }
+  
+  .btn-link-questions:link { 
+    text-decoration: none; 
+  } 
+  .btn-link-questions:visited { 
+    text-decoration: none; 
+  } 
+  .btn-link-questions:hover { 
+    text-decoration: none; 
+  } 
+  .btn-link-questions:active { 
+    text-decoration: none; 
+  }
+  
+  .project-info {
+    height: 650px;
+  }
+  
+  .project-add-info {
+    background-image: url("background-curve.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 650px;
+  }
+  
+  .project-img-album {
+    height: 650px;
+  }
+  
+  .reviews-block-background {
+    background-image: url("reviews-background.png");
+    background-repeat: no-repeat;
+  }
+  
+  .btn-standard {
+    background-color: #E2D7C1;
+    color: #000000;
+    font-size: 12px;
+  }
+  
+  .sponsor-card {
+    background-color: white;
+    border-radius: 1px;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .buy-line {
+    border-width: 1px;
+    color: #CBBFA7;
+    width: 90%;
+  }
+  
+  .buy-form {
+    border-radius: 8px;
+    background-color: white;
+    height: 15rem;
+    width: 100%;
+  }
+  
+  .buy-text {
+    position: absolute;
+    left: 0;
+    font-size: 18px;
+    color: #484542;
+    padding-left: 3rem;
+    padding-top: 7rem;
+  }
+  
+  .buy-murti-img {
+    position: absolute;
+    left: -3rem;
+    top: -16rem;
+  }
+  
+  .buy-murti-img-container {
+    position: relative;
+  }
+  
+  .buy-text em {
+    color: #8B0000;
+  }
+  
+  .reviews-box {
+    padding: 3rem;
+    width: 60%;
+    height: 50%;
+    background-color: white;
+    border-radius: 8px;
+  }
+  
+  .murti-add-info-img {
+    position: relative;
+    top: 7rem;
+    left: 0;
+  }
+  
+  .patternt-left-add-info-img {
+    position: relative;
+    top: 22%;
+    left: 0;
+    display: inline;
+  }
+  
+  .patternt-right-add-info-img {
+    position: relative;
+    top: 0;
+    left: 55%;
+    display: inline;
+    float: left;
+  }
+  
+  .arror-left-img {
+    position: relative;
+    top: -5rem;
+    left: 55%;
+    display: inline;
+    z-index: 15;
+  }
+  
+  .arror-right-img {
+    position: relative;
+    top: 20rem;
+    left: -18rem;
+    display: inline;
+    z-index: 15;
+  }
+  
+  .add-info-block {
+    display: inline-block;
+  }
+  
+  .murli-album-block-img {
+    margin-top: 4rem;
+  }
+  
+  .album-img-block {
+    margin-top: 7rem;
+    height: 400px;
+    margin-left: 5rem;
+  }
+  
+  .album-img {
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: #E2D7C1;
+    border-style: solid;
+    margin-left: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .achievements-block {
+    height: 40rem;
+  }
+  
