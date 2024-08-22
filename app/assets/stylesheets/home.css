@@ -108,7 +108,7 @@ body {
 
 @media (max-width: 992px) {
   .title-block {
-    height: 85vh;
+    height: fit-content;
     .title-block-content {
       flex-direction: column;
       align-items: center;
@@ -118,11 +118,12 @@ body {
       gap: 20px;
 
       .image-block {
+        text-align: center;
         flex-basis: 100%;
         .title-murti-img {
-          width: 100%;
-          height: 60%;
-          max-width: 100%;
+          width: 70%;
+          height: 70%;
+          max-width: 70%;
           max-height: 70%;
         }
       }
@@ -365,7 +366,8 @@ body {
 
 @media (max-width: 992px) {
   .middle-image-block {
-    height: fit-content;
+    height: 60rem;
+
     background-color: white;
     .frame-left {
       display: none;
@@ -376,14 +378,15 @@ body {
 
     .middle-image-content {
       background-color: white;
+      height: fit-content;
       flex-direction: column;
 
       .first-description {
         vertical-align: middle;
         min-width: 100%;
         padding-top: 2rem;
-        padding-left: 15rem;
-        padding-right: 15rem;
+        padding-left: 5rem;
+        padding-right: 5rem;
         order: 2;
       }
 
@@ -403,8 +406,8 @@ body {
         vertical-align: middle;
         min-width: 100%;
         padding-top: 2rem;
-        padding-left: 15rem;
-        padding-right: 15rem;
+        padding-left: 5rem;
+        padding-right: 5rem;
         order: 3;
       }
     }
@@ -575,6 +578,7 @@ div::-webkit-scrollbar-thumb {
 
 @media (max-width: 992px) {
   .achievements-block {
+    height: fit-content;
     padding-top: 3rem;
     .achievements-content {
       flex-direction: column;
@@ -583,7 +587,8 @@ div::-webkit-scrollbar-thumb {
       height: 100%;
 
       .description-video {
-        height: 70%;
+        padding-top: 0;
+        height: 15rem;
       }
 
       button {
@@ -650,14 +655,18 @@ div::-webkit-scrollbar-thumb {
 
 @media (max-width: 992px) {
   .reviews-block {
+    background-position: center;
     height: fit-content;
+    background-size: auto;
     .reviews-content {
       padding-left: 1rem;
       padding-right: 1rem;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
 
       .review-item {
         width: 100%;
-        height: 50vh;
+        height: 40vh;
         .review-item-content {
           width: 100%;
           padding-left: 1rem;
@@ -902,7 +911,6 @@ div::-webkit-scrollbar-thumb {
     .card-item {
       background-color: white;
       border-radius: 8px;
-      border: 1px solid black;
       padding: 1.5rem;
       text-align: center;
 
@@ -1014,10 +1022,29 @@ div::-webkit-scrollbar-thumb {
 /* questions block */
 
 .questions-block {
-  height: 60rem;
+  height: fit-content;
   padding-top: 2rem;
   padding-left: 6rem;
   padding-right: 6rem;
+
+  button {
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px;
+    text-align: left;
+    color: #6E6051;
+  }
+
+  button:not(.collapsed) {
+    background-color: white;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px;
+    text-align: left;
+    color: #6E6051;
+  }
 
   h1 {
     font-family: PT Serif;
@@ -1026,6 +1053,15 @@ div::-webkit-scrollbar-thumb {
     line-height: 32px;
     text-align: left;
     color: #484542;
+  }
+
+  p {
+    font-family: Inter;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 30px;
+      text-align: left;
+      color: #484542;
   }
 }
 
@@ -1039,11 +1075,93 @@ div::-webkit-scrollbar-thumb {
 /* contacts block */
 
 .contacts-block {
+  padding-top: 3rem;
+  height: fit-content;
+  background-image: url("contacts-pattern.png");
+  background-repeat: no-repeat;
+  background-position: right 0px bottom 0px;
+  background-size: 55% 100%;
 
+  h1 {
+    font-family: PT Serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 32px;
+    text-align: left;
+    color: #484542;
+  }
+
+  .contacts-content {
+    display: grid;
+    grid-template-columns: 35% 65%;
+    grid-template-rows: 100%;
+    height: 100%;
+    align-items: end;
+    padding-left: 6rem;
+
+    .info-block {
+      .address-block {
+        padding: 1.5rem;
+        height: fit-content;
+        background-color: white;
+      }
+
+      p {
+        font-family: Inter;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20.8px;
+        text-align: left;
+        color: #484542;
+      }
+
+      p.contacts-country {
+        font-family: Inter;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 20.8px;
+        text-align: left;
+        color: #484542;
+      }
+
+      p.contact-name {
+        font-family: Inter;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 26px;
+        text-align: left;
+        color: #484542;
+      }
+    }
+    .image-block {
+      justify-self: end;
+      text-align: right;
+      vertical-align: bottom;
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+  }
 }
 
 @media (max-width: 992px) {
   .contacts-block {
-    
+    background-image: none;
+    .contacts-content {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      grid-template-rows: auto auto;
+      grid-template-columns: 100%;
+      align-items: unset;
+
+      .image-block {
+        img {
+          max-width: 100%;
+          max-height: 100%;
+        }
+      }
+    }
   }
 }
