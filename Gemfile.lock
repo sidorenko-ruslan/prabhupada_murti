@@ -161,6 +161,7 @@ GEM
       racc (~> 1.4)
     nokogiri (1.16.7-x86_64-linux)
       racc (~> 1.4)
+    pg (1.5.7)
     pry (0.14.2)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -281,6 +282,7 @@ DEPENDENCIES
   error_highlight (>= 0.4.0)
   jbuilder
   jsbundling-rails
+  pg (~> 1.1)
   pry (~> 0.14.2)
   puma (>= 5.0)
   rack-cors
