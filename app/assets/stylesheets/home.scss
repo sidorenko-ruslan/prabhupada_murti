@@ -16,6 +16,10 @@ body {
   gap: 3rem;
 }
 
+.navbar {
+  padding-left: 6rem;
+}
+
 .navbar a {
   font-family: Inter;
   font-size: 16px;
@@ -26,8 +30,17 @@ body {
 }
 
 @media (max-width: 992px) {
+  .navbar {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
   .navbar a {
     font-size: 20px;
+  }
+
+  .navbar-collapse {
+    background-color: #F8F5F1;
+    width: 100%;
   }
 }
 
@@ -1016,6 +1029,15 @@ div::-webkit-scrollbar-thumb {
       }
 
       p.contacts-country {
+        font-family: Inter;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 20.8px;
+        text-align: left;
+        color: #484542;
+      }
+
+      a {
         font-family: Inter;
         font-size: 16px;
         font-weight: 600;

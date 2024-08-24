@@ -11,6 +11,7 @@ class HomeController < ApplicationController
     end
 
     lang = cookies[:lang]&.to_sym
+    @language = lang == :ru ? "Рус" : "Eng"
     if I18n.available_locales.include?(lang)
       I18n.locale = lang
     end

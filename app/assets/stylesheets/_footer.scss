@@ -5,7 +5,7 @@
   grid-template-rows: 100%;
   padding: 2rem;
 
-  a {
+  a, button {
     font-family: Inter;
     font-size: 16px;
     font-weight: 300;
@@ -16,6 +16,12 @@
 
   img {
     padding-left: 4rem;
+  }
+
+  .nav-lang {
+    padding-top: 0;
+    padding-left: 2rem;
+    text-align: center;
   }
 }
 
@@ -29,6 +35,12 @@
 
     img {
       padding-left: 0;
+    }
+
+    .nav-lang {
+      padding-top: 0;
+      padding-left: 0;
+      text-align: left;
     }
   }
 }
