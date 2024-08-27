@@ -5,6 +5,24 @@ class HomeController < ApplicationController
     request.variant = browser.device.mobile? ? :mobile : :desktop
   end
 
+  def buy
+
+  end
+
+  def sponsor
+
+  end
+
+  def make_purchase
+
+  end
+
+  def become_sponsor
+
+  end
+
+  private
+
   def set_language
     if params[:lang].present?
       cookies.permanent[:lang] = params[:lang]

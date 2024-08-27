@@ -1,3 +1,14 @@
 body {
-    background-color: green;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-bottom: 3rem;
+}
+
+.nav-item:last-child {
+  float: right;
+}
+
+.navbar {
+  align-items: flex-end;
+  justify-content: flex-end;
 }
