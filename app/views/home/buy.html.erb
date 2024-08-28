@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>Купить мурти</h1>
+
+  <%= form_with(model: @order, url: "/make_purchase") do |form| %>
+    <div>
+      <%= form.label :client_name, "Ф.И.О." %>
+      <%= form.text_field :client_name, :class => "form-control", :required => true %>
+    </div>
+    <div>
+      <%= form.label :phone, "Номер телефона" %>
+      <%= form.text_field :phone, :class => "form-control", :required => true %>
+    </div>
+    <div>
+      <%= form.label :email, "Почта" %>
+      <%= form.text_field :email, :class => "form-control", :required => true %>
+    </div>
+    <div>
+      <%= form.label :address, "Адрес доставки" %>
+      <%= form.text_area :address, :class => "form-control", :required => true %>
+    </div>
+    <br/>
+    <%= form.submit "Отправить", class: "btn btn-primary" %>
+<% end %>
+</div>

@@ -23,7 +23,7 @@
       </div>
       <br/>
       <hr>
-      <button class="btn btn-standard text-nowrap"><%= t "buy_block.button" %></button>
+      <%= button_to t("buy_block.button"), "/buy", :class => "btn btn-standard text-nowrap", :method => :get %>
       <br/>
       <br/>
     </div>

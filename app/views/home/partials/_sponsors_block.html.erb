@@ -20,7 +20,7 @@
         <p class="card-price"><%= t "sponsors_block.price_1" %></p>
       </div>
       <br/>
-      <button class="btn btn-standard text-nowrap"><%= t "sponsors_block.button" %></button>
+      <%= button_to t("sponsors_block.button"), "/sponsor?count=10", :class => "btn btn-standard text-nowrap", :method => :get %>
     </div>
     <div class="card-item">
       <div class="card-header">
@@ -41,7 +41,7 @@
         <p class="card-price"><%= t "sponsors_block.price_2" %></p>
       </div>
       <br/>
-      <button class="btn btn-standard text-nowrap"><%= t "sponsors_block.button" %></button>
+      <%= button_to t("sponsors_block.button"), "/sponsor?count=30", :class => "btn btn-standard text-nowrap", :method => :get %>
     </div>
     <div class="card-item">
       <div class="card-header">
@@ -63,7 +63,7 @@
         <p class="card-price"><%= t "sponsors_block.price_3" %></p>
       </div>
       <br/>
-      <button class="btn btn-standard text-nowrap"><%= t "sponsors_block.button" %></button>
+      <%= button_to t("sponsors_block.button"), "/sponsor?count=50", :class => "btn btn-standard text-nowrap", :method => :get %>
     </div>
   </div>
   <br/>

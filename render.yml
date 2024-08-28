@@ -1,7 +1,7 @@
 # This is a basic example Blueprint for a Django web service and
 # the PostgreSQL database it connects to.
 services:
-  - type: murti-store
+  - type: docker
     plan: free
     name: django-app
     runtime: python

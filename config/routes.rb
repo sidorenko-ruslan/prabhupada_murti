@@ -12,6 +12,12 @@ Rails.application.routes.draw do
     resources :orders
   end
 
+  get "buy", to: "home#buy"
+  get "sponsor", to: "home#sponsor"
+  post "become_sponsor", to: "home#become_sponsor"
+  post "make_purchase", to: "home#make_purchase"
+  get "payment_form", to: "home#payment_form"
+
   # Defines the root path route ("/")
   root "home#index"
 end

@@ -6,15 +6,39 @@ class HomeController < ApplicationController
   end
 
   def buy
-
+    @order = Order.new
   end
 
   def sponsor
 
   end
 
-  def make_purchase
+  def payment_form
+    mrh_login = "giftprabhupada"
+    out_sum = "100.00"
+    password_1 = "VYAZIu3AN2exAJ4V3m0i"
+    order_id = params[:order_id]
+    inv_desc = "Prabhupada Murti"
+    signature = Digest::MD5.hexdigest("#{mrh_login}:#{out_sum}:#{password_1}")
 
+    @script_src = "https://auth.robokassa.ru/Merchant/PaymentForm/FormFLS.js?" \
+      "MerchantLogin=#{mrh_login}&" \
+      "OutSum=#{out_sum}&" \
+      "InvId=#{order_id}&" \
+      "Description=#{inv_desc}&" \
+      "SignatureValue=#{signature}&" \
+      "Culture=ru"
+
+    render "payment_form", layout: false
+  end
+
+  def make_purchase
+    @order = Order.new(order_params)
+    if @order.save
+      redirect_to "/payment_form?order_id=#{@order.id}"
+    else
+      render "buy"
+    end
   end
 
   def become_sponsor
@@ -22,6 +46,10 @@ class HomeController < ApplicationController
   end
 
   private
+
+  def order_params
+    params.require(:order).permit(:client_name, :phone, :email, :address)
+  end
 
   def set_language
     if params[:lang].present?
