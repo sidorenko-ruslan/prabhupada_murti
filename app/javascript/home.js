@@ -12,9 +12,19 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }
   }).mount();
 
-  let image = document.querySelector('.video-image');
-  // image.addEventListener("click", function() {
-  //  this.style.visibility = 'hidden';
-  //  document.querySelector(".description-video-frame").click();
-  // });
+  Array.from(document.querySelectorAll(".slide-image")).forEach((image, index) => {
+    image.addEventListener("click", function() {
+      this.style.visibility = 'hidden';
+      this.style.display = "none";
+      document.getElementById(`slide-video-${index}`).click();
+    });
+  });
+
+
+  Array.from(document.querySelectorAll(".gallery-item")).forEach((galleryImage, index) => {
+    galleryImage.addEventListener("click", function() {
+      let largeImageSrc = this.getAttribute("large-image-src");
+      document.getElementById("galleryLargeImage").setAttribute("src", largeImageSrc);
+    });
+  });
 });

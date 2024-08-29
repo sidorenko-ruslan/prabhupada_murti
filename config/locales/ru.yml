@@ -1,4 +1,8 @@
 ru:
+  order:
+    not_payed: "Не оплачен"
+    payed: "Оплачен"
+    pay_error: "Ошибка оплаты"
   navigation:
     about: "О проекте"
     reviews: "Отзывы"

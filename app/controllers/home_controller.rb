@@ -19,7 +19,7 @@ class HomeController < ApplicationController
     password_1 = "VYAZIu3AN2exAJ4V3m0i"
     order_id = params[:order_id]
     inv_desc = "Prabhupada Murti"
-    signature = Digest::MD5.hexdigest("#{mrh_login}:#{out_sum}:#{password_1}")
+    signature = Digest::MD5.hexdigest("#{mrh_login}:#{out_sum}:#{order_id}:#{password_1}")
 
     @script_src = "https://auth.robokassa.ru/Merchant/PaymentForm/FormFLS.js?" \
       "MerchantLogin=#{mrh_login}&" \
