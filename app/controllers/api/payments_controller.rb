@@ -3,8 +3,13 @@ class Api::PaymentsController < ApplicationController
 
   def result
     signatureValue = params[:SignatureValue]
+
     order = Order.find(params[:InvId])
-    order.payed!
+    order.status = :payed
+    order.payment_sum = params[:OutSum]
+    order.payment_fee = params[:Fee]
+    order.payment_method = params[:PaymentMethod]
+    order.save
 
     render plain: "OK #{order.id}"
   end

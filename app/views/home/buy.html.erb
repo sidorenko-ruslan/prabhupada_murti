@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container payment-block">
   <h1>Купить мурти</h1>
   <%= form_with(model: @order, url: "/make_purchase") do |form| %>
     <% if @order.errors.any? %>
@@ -25,6 +25,6 @@
       <%= form.text_area :address, :class => "form-control", :required => true %>
     </div>
     <br/>
-    <%= form.submit "Отправить", class: "btn btn-primary" %>
+    <%= form.submit "Перейти к оплате", class: "btn btn-light" %>
 <% end %>
 </div>
