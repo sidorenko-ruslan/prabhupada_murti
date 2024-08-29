@@ -1,4 +1,11 @@
 ru:
+  activerecord:
+    errors:
+      models:
+        order:
+          attributes:
+            email:
+              invalid: "Неверный формат email"
   order:
     not_payed: "Не оплачен"
     payed: "Оплачен"

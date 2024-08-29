@@ -20,6 +20,7 @@ class HomeController < ApplicationController
     out_sum = "100.00"
     password_1 = "VYAZIu3AN2exAJ4V3m0i"
     order_id = params[:order_id]
+    email = params[:email]
     inv_desc = "Prabhupada Murti"
     signature = Digest::MD5.hexdigest("#{mrh_login}:#{out_sum}:#{order_id}:#{password_1}")
 
@@ -29,6 +30,7 @@ class HomeController < ApplicationController
       "InvId=#{order_id}&" \
       "Description=#{inv_desc}&" \
       "SignatureValue=#{signature}&" \
+      "Email=#{email}&" \
       "Culture=ru"
 
     render "payment_form", layout: false
@@ -37,9 +39,9 @@ class HomeController < ApplicationController
   def make_purchase
     @order = Order.new(order_params)
     if @order.save
-      redirect_to "/payment_form?order_id=#{@order.id}"
+      redirect_to "/payment_form?order_id=#{@order.id}&email=#{@order.email}"
     else
-      render "buy"
+      render "buy", status: 422
     end
   end
 
