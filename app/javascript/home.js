@@ -2,6 +2,12 @@
 import Splide from '@splidejs/splide';
 
 document.addEventListener("DOMContentLoaded", (event) => {
+  let statusModal = document.getElementById("status-modal");
+  let button = document.getElementById("operation-button");
+  if (statusModal) {
+    button.click();
+  }
+
   new Splide(".splide-wide", {
     perPage: 4,
     gap: "2rem",

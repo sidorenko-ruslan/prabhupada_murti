@@ -16,7 +16,7 @@ class Api::PaymentsController < ApplicationController
   end
 
   def success
-    puts "success"
+    redirect_to "#{root_path}?operation_status=success"
   end
 
   private

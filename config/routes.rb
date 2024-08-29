@@ -14,8 +14,8 @@ Rails.application.routes.draw do
 
   namespace :api do
     post "fail", to: "payments#fail"
-    post "success", to: "payments#success"
     post "result", to: "payments#result"
+    get "success", to: "payments#success"
   end
 
   get "buy", to: "home#buy"

@@ -2,6 +2,8 @@ class HomeController < ApplicationController
   before_action :set_language
 
   def index
+    @operation_status = params[:operation_status]
+
     request.variant = browser.device.mobile? ? :mobile : :desktop
   end
 

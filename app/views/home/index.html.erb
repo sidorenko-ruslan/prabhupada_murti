@@ -13,3 +13,23 @@
 <%= render "home/partials/questions_block" %>
 <%= render "home/partials/contacts_block" %>
 <%= render "home/partials/footer_block" %>
+
+<% if @operation_status == "success" %>
+<button type="button" id="operation-button" data-bs-toggle="modal" data-bs-target="#status-modal">
+</button>
+<div id="status-modal" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Оповещение</h5>
+      </div>
+      <div class="modal-body">
+        <p>Оплата прошла успешно</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
