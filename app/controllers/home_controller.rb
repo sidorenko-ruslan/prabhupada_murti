@@ -24,7 +24,7 @@ class HomeController < ApplicationController
     inv_desc = "Prabhupada Murti"
     signature = Digest::MD5.hexdigest("#{mrh_login}:#{out_sum}:#{order_id}:#{password_1}")
 
-    @script_src = "https://auth.robokassa.ru/Merchant/PaymentForm/FormFLS.js?" \
+    @script_src = "https://auth.robokassa.ru/Merchant/PaymentForm/FormMS.js?" \
       "MerchantLogin=#{mrh_login}&" \
       "OutSum=#{out_sum}&" \
       "InvId=#{order_id}&" \
