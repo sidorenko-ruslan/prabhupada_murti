@@ -6,6 +6,9 @@ ru:
           attributes:
             email:
               invalid: "Неверный формат email"
+        sponsor:
+          attributes:
+            murti_amount: "Должно быть число"
   order:
     not_payed: "Не оплачен"
     payed: "Оплачен"

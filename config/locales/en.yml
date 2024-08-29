@@ -1,13 +1,94 @@
-ru:
+en:
+  activerecord:
+    errors:
+      models:
+        order:
+          attributes:
+            email:
+              invalid: "Invalid email format"
+        sponsor:
+          attributes:
+            murti_amount: "Should be a number"
+  order:
+    not_payed: "Not payed"
+    payed: "Payed"
+    pay_error: "Payment error"
   navigation:
     about: "About"
-    reviews: "Review"
-    buy: "Купить"
-    support: "Поддержать"
-    contacts: "Контакты"
+    reviews: "Reviews"
+    buy: "Buy"
+    support: "Support"
+    contacts: "Contacts"
   title_block:
-    header: "English text fewfew ewg"
-    description: "Some description"
-    button: "Узнать больше"
+    header: "Make the most important and touching gift for  Srila Prabhupad’s disciples"
+    description: "And also invite Srila Prabhupada to your house in the form of a realistic looking Murti."
+    button: "To know more"
   about_block:
-    header: "О проекте"
+    header: "About the project"
+    goal_1: "Main goal"
+    goal_1_description: "Touching and meaningful gift for  Srila Prabhupad’s disciples."
+    goal_2: "Second goal"
+    goal_2_description: "To give every devotee the opportunity to participate in this service."
+    goal_3: "Third goal"
+    goal_3_description: "Spreading the high-quality realistic murtis of Srila Prabhupada."
+    paragraph_1: "We want to give every disciple of Srila Prabhupada a smile and joy of meeting his spiritual master in the form of a realistic, “alive” murti. In this way? The object and center point of their entire life’s service will come to each of them, as if accepting their service and showing that he is always present with his disciples."
+    paragraph_2: "Every devotee can support this project by purchasing murti for himself. In this way, he will sponsor a gift for one of Srila Prabhupada’s disciples and invite a realistic form of Srila Prabhupada to his own home."
+    paragraph_3: "Join us in this service and help us to arrange this meeting of Srila Prabhupada with his disciples."
+    button: "Join the service"
+  middle_image_block:
+    first_description: <strong>The silhouette of the tree</strong> depicted on the box includes sawdust from the actual tree under which Srila Prabhupada was born.
+    second_description: <strong>The metal alloy of the murti</strong> includes coins, which were donated to sankirtana devotees for Srila Prabhupada’s books. They were collected from 25 countries, which were personally visited by Srila Prabhupada.
+  achievements_block:
+    first_header: "Achieved"
+    paragraph_1: "In 2023, at the annual GBC meeting in Mayapur, the murtis were solemnly gifted to all GBC members."
+    paragraph_2: "The videos of Srila Prabhupada's disciples feedbacks and murti-giving ceremonies are published on a dedicated Youtube channel."
+    paragraph_3: "The launch of the promo cause great interest, and in just two days we received more than 200 requests from devotees who wanted to purchase murti."
+    second_header: "A list of GBC members who were presented with murtis"
+    button: "Visit us on Youtube"
+  reviews_block:
+    header: "Feedback from Srila Prabhupada's disciples"
+    review_1_name: "HG Pankajanghri Prabhu"
+    review_1_text: "Every devotee can support this project by purchasing murti for himself. In this way, he will sponsor a gift for one of Srila Prabhupada’s disciples, helping to spread spiritual wealth and inspiration."
+  buy_block:
+    header: "Buying the murti"
+    description: "Every devotee can support this project by purchasing murti for himself. In this way, he will sponsor a gift for one of Srila Prabhupada’s disciples and invite a realistic form of Srila Prabhupada to his own home."
+    buy_description: "By purchasing one murti, <em>вyou sponsor a murti for one disciple</em> Srila Prabhupada."
+    buy_header: "Srila Prabhupada's murti"
+    size_title: "Murti size:"
+    size_text: "54мм х 40мм х 42мм"
+    price: "10 800 р."
+
+    button: "Buy a murti"
+  sponsors_block:
+    header: "Become a sponsor"
+    description: "You can support this project on a larger scale and sponsor a gift for more of Srila Prabhupada's disciples. You can also get nice bonuses in the form of rare ISKCON relics"
+    card_header: "Srila Prabhupada's murti"
+    card_point_1: "One murti as a gift for you"
+    card_point_2: "A piece of the very tree under which Srila Prabhupada was born"
+    card_point_3: "A piece of thread of japa beads from the very first initiation in ISKCON, on which Srila Prabhupada chanted himself"
+    card_point_4: "Mahaprasadam jewelry from the beautiful Deities of our main temples in Vrindavan and Mayapur"
+    count_text: "Count:"
+    price_1: "60 000 р."
+    price_2: "167 400 р."
+    price_3: "275 400 р."
+    count_manual_text: "Own count:"
+    button: "Become a sponsor"
+  questions_block:
+    header: "FAQ"
+    first_question: "Who can worship this murti?"
+    second_question: "Can I perform an abhisheka for this murti?"
+    third_question: "How to perform an installation of this murti?"
+    fourth_question: "Условия доставки"
+    fourth_question_description_1: "Как оформить доставку: При оформлении заказа укажите пожалуйста в обязательных полях свои актуальные адрес и номер телефона. Наши менеджеры свяжутся с вами для уточнения деталей и оформления доставки."
+    fourth_question_description_2: "Партнеры:<br>По России мы отправляем Почтой России и транспортной компанией СДЭК."
+    fourth_question_description_3: "А можно отправить в мой город в другой стране?<br/> Да, мы отправляем по всему миру. После оформления заказа с вами свяжется менеджер для уточнения деталей отправки, оставляйте пожалуйста актуальные контакты."
+    fourth_question_description_4: "Стоимость:<br/>Для России: стоимость доставки рассчитывается в зависимости от региона и обычно составляет от 200 до 800р. Для других стран: стоимость и способы доставки рассчитывается индивиально. Вместе с менеджером вы сможете выбрать подходящий для вас вариант доставки и согласовать стоимость."
+    fourth_question_description_5: "Сроки доставки:<br/>Для России: сроки доставки зависят от региона, средние сроки прибытия посылки после отправки составляют 7-14 дней.<br/>Для других стран: для каждой страны все индивидуально, уточняйте актуальную информацию у менеджера."
+    fifth_question: "Способы возврата"
+    fifth_question_description: "Возврат или обмен можно бесплатно оформить в течении 30 дней после покупки, если он Вам не подошел.<br/>Товар оказался некачественным — сообщите нам об этом через своего менеджера или по телефону +79953018108. Мы вернем товар в магазин или заменим аналогичным."
+  contacts_block:
+    header: "Contacts"
+    russia: "Russia"
+    india: "India"
+    china: "China"
+    contact_name: "Shyam Gaura das"

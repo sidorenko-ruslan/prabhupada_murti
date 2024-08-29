@@ -1,1 +1,39 @@
-become sponsor
+<div class="container create-sponsor-block">
+  <h1>Стать спонсором</h1>
+  <%= form_with(model: @sponsor, url: "/become_sponsor") do |form| %>
+    <% if @sponsor.errors.any? %>
+      <ul>
+        <% @sponsor.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
+    <div>
+      <%= form.label :name, "Ф.И.О." %>
+      <%= form.text_field :name, :class => "form-control", :required => true %>
+    </div>
+    <div>
+      <%= form.label :phone, "Номер телефона" %>
+      <%= form.text_field :phone, :class => "form-control", :required => true %>
+    </div>
+    <div>
+      <%= form.label :address, "Адрес проживания" %>
+      <%= form.text_area :address, :class => "form-control", :required => true %>
+    </div>
+    <div>
+      <%= form.label :murti_amount, "Количество мурти" %>
+      <% input_params = {:class => "form-control", :required => true, min: 50, max: 100} %>
+      <% input_params = @manual_count ? input_params : input_params.merge(disabled: true) %>
+      <%= form.number_field :murti_amount, input_params %>
+    </div>
+    <div>
+      <p>Способы связи</p>
+      <%= form.label :telegram, "Телеграм" %>
+      <%= form.check_box :telegram, :class => "form-check-input" %>
+      <%= form.label :whatsapp, "WhatsApp" %>
+      <%= form.check_box :whatsapp, :class => "form-check-input" %>
+    </div>
+    <br/>
+    <%= form.submit "Отправить", class: "btn btn-light" %>
+<% end %>
+</div>

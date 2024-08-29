@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root :to => "orders#index"
+    get "sponsors", to: "sponsors#index"
 
     resources :orders
   end

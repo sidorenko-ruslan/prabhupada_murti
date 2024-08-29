@@ -1,0 +1,28 @@
+<br/>
+<br/>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Имя</th>
+      <th scope="col">Телефон</th>
+      <th scope="col">Адрес</th>
+      <th scope="col">Количество мурти</th>
+      <th scope="col">Есть телеграм</th>
+      <th scope="col">Есть WhatsApp</th>
+      <th scope="col">Дата создания</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sponsors.each do |sponsor| %>
+      <tr>
+        <td><%= sponsor.name %></td>
+        <td><%= sponsor.phone %></td>
+        <td><%= sponsor.address %></td>
+        <td><%= sponsor.murti_amount %></td>
+        <td><%= sponsor.telegram %></td>
+        <td><%= sponsor.whatsapp %></td>
+        <td><%= sponsor.created_at.strftime("%b %d, %Y at %I:%M %p") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

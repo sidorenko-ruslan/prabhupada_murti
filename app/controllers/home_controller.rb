@@ -12,7 +12,18 @@ class HomeController < ApplicationController
   end
 
   def sponsor
+    @sponsor = Sponsor.new
+    @manual_count = params[:manual]
+    @sponsor.murti_amount = params[:count] if params[:count]
+  end
 
+  def become_sponsor
+    @sponsor = Sponsor.new(sponsor_params)
+    if @sponsor.save
+      redirect_to root_path
+    else
+      render "sponsor", status: 422
+    end
   end
 
   def payment_form
@@ -45,14 +56,14 @@ class HomeController < ApplicationController
     end
   end
 
-  def become_sponsor
-
-  end
-
   private
 
   def order_params
     params.require(:order).permit(:client_name, :phone, :email, :address)
+  end
+
+  def sponsor_params
+    params.require(:sponsor).permit(:name, :phone, :address, :murti_amount, :telegram, :whatsapp)
   end
 
   def set_language
