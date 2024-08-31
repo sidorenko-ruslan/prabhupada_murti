@@ -2,13 +2,17 @@
   <div class="reviews-content">
     <h2><%= t "reviews_block.header" %></h2>
     <br/>
-    <div class="review-item">
+    <div class="review-slide-items">
       <div class="review-item-content">
         <div class="review-top">
+          <img class="review-photo" src="review-member-photo.png">
           <h3><%= t "reviews_block.review_1_name" %></h3>
         </div>
         <p><%= t "reviews_block.review_1_text" %></p>
       </div>
+      <button class="review-slide-button arrow-left" data-direction="left"></button>
+      <button class="review-slide-button arror-right" data-direction="right"></button>
+      <img src="review-quotes.png" class="review-quotes-image">
     </div>
   </div>
 </div>
