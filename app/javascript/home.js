@@ -1,7 +1,7 @@
 
 import Splide from '@splidejs/splide';
 
-document.addEventListener("DOMContentLoaded", (_event) => {
+document.addEventListener("turbo:load", (_event) => {
   let statusModal = document.getElementById("status-modal");
   let button = document.getElementById("operation-button");
   if (statusModal) {
