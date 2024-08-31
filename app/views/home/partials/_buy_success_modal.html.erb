@@ -1,0 +1,17 @@
+<button type="button" id="operation-button" data-bs-toggle="modal" data-bs-target="#status-modal">
+</button>
+<div id="status-modal" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"><%= t "buy_success_modal.title" %></h5>
+      </div>
+      <div class="modal-body">
+        <p><%= t "buy_success_modal.message" %></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><%= t "buy_success_modal.button" %></button>
+      </div>
+    </div>
+  </div>
+</div>
