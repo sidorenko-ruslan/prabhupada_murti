@@ -58,7 +58,7 @@ body {
 /* title block */
 
 .title-block {
-  background-image: url("main-info-background.png");
+  background-image: url("main-info-background.webp");
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
@@ -71,7 +71,7 @@ body {
     height: 100%;
     max-height: inherit;
 
-    background-image: url("pattern-main-right.png");
+    background-image: url("pattern-main-right.webp");
     background-repeat: no-repeat;
     background-position: right;
 
@@ -180,7 +180,7 @@ body {
   }
 
   .title-video-left-pattern {
-    background-image: url("title-video-left-frame.png");
+    background-image: url("title-video-left-frame.webp");
     background-repeat: no-repeat;
     background-position: right;
     flex-basis: 15%;
@@ -189,7 +189,7 @@ body {
   }
 
   .title-video-right-pattern {
-    background-image: url("title-video-right-frame.png");
+    background-image: url("title-video-right-frame.webp");
     background-repeat: no-repeat;
     background-position: left;
     flex-basis: 15%;
@@ -201,7 +201,7 @@ body {
     flex-basis: 60%;
     padding: 1rem;
     border: 1px solid #E2D7C1;
-  
+
     .title-video-content {
       padding: 1rem;
       border: 1.5px solid #E2D7C1;
@@ -321,7 +321,7 @@ body {
 
 .middle-image-block {
   height: 75vh;
-  background-image: url("background-curve.png");
+  background-image: url("background-curve.webp");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
@@ -548,7 +548,7 @@ div::-webkit-scrollbar-thumb {
 .buy-block {
   height: 40rem;
 
-  background-image: url("buy-frame-right.png");
+  background-image: url("buy-frame-right.webp");
   background-repeat: no-repeat;
   background-position: right 3rem;
 
