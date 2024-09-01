@@ -37,7 +37,7 @@ class HomeController < ApplicationController
     email = params[:email]
     inv_desc = "Prabhupada Murti"
     hash = {
-      sno: "osn",
+      sno: "usn_income",
       items: [
         {name: "Сувенирная статуэтка", quantity: 1, sum: 20, cost: 20, payment_method: "full_payment", payment_object: "commodity", tax: "none"}
       ]
