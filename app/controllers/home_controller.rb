@@ -39,7 +39,7 @@ class HomeController < ApplicationController
     hash = {
       sno: "usn_income",
       items: [
-        {name: "Сувенирная статуэтка", quantity: 3, sum: 10, cost: 30, payment_method: "full_payment", payment_object: "commodity", tax: "none"}
+        {name: "Сувенирная статуэтка", quantity: 3, sum: 30, cost: 10, payment_method: "full_payment", payment_object: "commodity", tax: "none"}
       ]
     }
     receipt = URI.encode_uri_component(JSON.generate(hash))
