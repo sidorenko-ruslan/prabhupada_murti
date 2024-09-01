@@ -42,8 +42,8 @@ class HomeController < ApplicationController
         {name: "Сувенирная статуэтка", quantity: 1, sum: 20, cost: 20, payment_method: "full_payment", payment_object: "commodity", tax: "none"}
       ]
     }
-    receipt = JSON.generate(hash)
-    receipt2 = URI.encode_uri_component(URI.encode_uri_component(receipt))
+    receipt = URI.encode_uri_component(JSON.generate(hash))
+    receipt2 = URI.encode_uri_component(receipt)
     signature = Digest::MD5.hexdigest("#{mrh_login}:#{out_sum}:#{order_id}:#{receipt}:#{password_1}")
 
     @script_src = "https://auth.robokassa.ru/Merchant/PaymentForm/FormMS.js?" \
