@@ -31,7 +31,7 @@ class HomeController < ApplicationController
 
   def payment_form
     mrh_login = "giftprabhupada"
-    out_sum = "10"
+    out_sum = "30"
     password_1 = "VYAZIu3AN2exAJ4V3m0i"
     order_id = params[:order_id]
     email = params[:email]
