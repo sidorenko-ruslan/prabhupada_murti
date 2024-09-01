@@ -50,7 +50,17 @@ class HomeController < ApplicationController
   def make_purchase
     @order = Order.new(order_params)
     if @order.save
-      redirect_to("https://auth.robokassa.ru/merchant/Invoice/kUpYvl4nKEm0jdAHJkZlBA", allow_other_host: true) # "/payment_form?order_id=#{@order.id}&email=#{@order.email}"
+      response.set_header("Access-Control-Allow-Origin", "*")
+      response.set_header("Access-Control-Allow-Methods", "*")
+      response.set_header("Access-Control-Allow-Headers", "'Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token'")
+      password_1 = "VYAZIu3AN2exAJ4V3m0i"
+      order_id = @order.id
+      out_sum = "10.00"
+      signature = Digest::MD5.hexdigest("#{mrh_login}:#{out_sum}:#{order_id}:#{password_1}")
+      email = "sidoruss@gmail.com"
+      params = "?MerchantLogin=#{mrh_login}&OutSum=#{out_sum}&InvId=#{order_id}&SignatureValue=#{signature}&Email=#{email}"
+
+      redirect_to("https://auth.robokassa.ru/merchant/Invoice/kUpYvl4nKEm0jdAHJkZlBA/#{params}", allow_other_host: true) # "/payment_form?order_id=#{@order.id}&email=#{@order.email}"
     else
       render "buy", status: 422
     end
