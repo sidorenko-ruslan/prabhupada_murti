@@ -55,6 +55,7 @@ class HomeController < ApplicationController
       response.set_header("Access-Control-Allow-Headers", "'Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token'")
       password_1 = "VYAZIu3AN2exAJ4V3m0i"
       order_id = @order.id
+      mrh_login = "giftprabhupada"
       out_sum = "10.00"
       signature = Digest::MD5.hexdigest("#{mrh_login}:#{out_sum}:#{order_id}:#{password_1}")
       email = "sidoruss@gmail.com"
