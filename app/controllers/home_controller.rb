@@ -1,3 +1,6 @@
+require "uri"
+require "json"
+
 class HomeController < ApplicationController
   before_action :set_language
 
@@ -28,12 +31,14 @@ class HomeController < ApplicationController
 
   def payment_form
     mrh_login = "giftprabhupada"
-    out_sum = "100.00"
+    out_sum = "20.00"
     password_1 = "VYAZIu3AN2exAJ4V3m0i"
     order_id = params[:order_id]
     email = params[:email]
     inv_desc = "Prabhupada Murti"
-    signature = Digest::MD5.hexdigest("#{mrh_login}:#{out_sum}:#{order_id}:#{password_1}")
+    receipt = JSON.generate({items: [{sum: "20.0", name: "Сувенирная статуэтка", quantity: "1"}, payment_method: "full_prepayment", payment_object: "commodity", tax: "none"]})
+    receipt = URI.encode_uri_component(receipt)
+    signature = Digest::MD5.hexdigest("#{mrh_login}:#{out_sum}:#{order_id}:#{receipt}:#{password_1}")
 
     @script_src = "https://auth.robokassa.ru/Merchant/PaymentForm/FormMS.js?" \
       "MerchantLogin=#{mrh_login}&" \
@@ -42,6 +47,7 @@ class HomeController < ApplicationController
       "Description=#{inv_desc}&" \
       "SignatureValue=#{signature}&" \
       "Email=#{email}&" \
+      "Receipt=#{receipt}" \
       "Culture=ru"
 
     render "payment_form", layout: false
@@ -50,18 +56,7 @@ class HomeController < ApplicationController
   def make_purchase
     @order = Order.new(order_params)
     if @order.save
-      response.set_header("Access-Control-Allow-Origin", "*")
-      response.set_header("Access-Control-Allow-Methods", "*")
-      response.set_header("Access-Control-Allow-Headers", "'Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token'")
-      password_1 = "VYAZIu3AN2exAJ4V3m0i"
-      order_id = @order.id
-      mrh_login = "giftprabhupada"
-      out_sum = "10.00"
-      signature = Digest::MD5.hexdigest("#{mrh_login}:#{out_sum}:#{order_id}:#{password_1}")
-      email = "sidoruss@gmail.com"
-      params = "?MerchantLogin=#{mrh_login}&OutSum=#{out_sum}&InvId=#{order_id}&SignatureValue=#{signature}&Email=#{email}"
-
-      redirect_to("https://auth.robokassa.ru/merchant/Invoice/kUpYvl4nKEm0jdAHJkZlBA/#{params}", allow_other_host: true) # "/payment_form?order_id=#{@order.id}&email=#{@order.email}"
+      redirect_to "/payment_form?order_id=#{@order.id}&email=#{@order.email}"
     else
       render "buy", status: 422
     end
