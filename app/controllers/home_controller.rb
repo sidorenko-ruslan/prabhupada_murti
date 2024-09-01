@@ -50,7 +50,7 @@ class HomeController < ApplicationController
   def make_purchase
     @order = Order.new(order_params)
     if @order.save
-      redirect_to "https://auth.robokassa.ru/merchant/Invoice/kUpYvl4nKEm0jdAHJkZlBA" # "/payment_form?order_id=#{@order.id}&email=#{@order.email}"
+      redirect_to("https://auth.robokassa.ru/merchant/Invoice/kUpYvl4nKEm0jdAHJkZlBA", allow_other_host: true) # "/payment_form?order_id=#{@order.id}&email=#{@order.email}"
     else
       render "buy", status: 422
     end
