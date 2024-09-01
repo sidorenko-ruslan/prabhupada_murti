@@ -5,7 +5,7 @@ class Admin::OrdersController < ApplicationController
   before_action :require_admin, only: [:edit, :update]
 
   def index
-    @orders = Order.all.order(created_at: :desc)
+    @orders = Order.includes(:disciple).order(created_at: :desc)
   end
 
   def edit
@@ -13,8 +13,8 @@ class Admin::OrdersController < ApplicationController
   end
 
   def update
-    @order = Order.new(order_params)
-    if @order.save
+    @order = Order.find(params[:id])
+    if @order.update order_params
       redirect_to admin_root_path
     else
       render "edit", status: 422
@@ -24,6 +24,6 @@ class Admin::OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:client_name, :phone, :email, :address)
+    params.require(:order).permit(:client_name, :phone, :email, :address, :track_number, :disciple_id)
   end
 end

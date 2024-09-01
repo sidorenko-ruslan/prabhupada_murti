@@ -11,8 +11,10 @@
       <th scope="col">Комиссия</th>
       <th scope="col">Способ оплаты</th>
       <th scope="col">Адрес доставки</th>
+      <th scope="col">Ученик ШП</th>
       <th scope="col">Дата создания</th>
       <th scope="col">Статус</th>
+      <th scope="col">Трек номер посылки</th>
       <th scope="col">Операции</th>
     </tr>
   </thead>
@@ -27,9 +29,13 @@
         <td><%= order.payment_fee %></td>
         <td><%= order.payment_method %></td>
         <td><%= order.address %></td>
+        <td><%= order.disciple&.name %></td>
         <td><%= order.created_at.strftime("%b %d, %Y at %I:%M %p") %></td>
         <td><%= t "order.#{order.status}" %></td>
-        <td><a href="<%= edit_admin_order_path(order) %>">Редактировать</a></td>
+        <td><%= order.track_number %></td>
+        <% if current_user.admin? %>
+          <td><a href="<%= edit_admin_order_path(order) %>">Редактировать</a></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

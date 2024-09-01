@@ -10,11 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_31_234634) do
+ActiveRecord::Schema[7.1].define(version: 2024_09_01_015118) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "admin_settings", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "disciples", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "phone"
+    t.string "address", null: false
+    t.boolean "murti", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -30,6 +39,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_31_234634) do
     t.string "payment_sum"
     t.string "payment_fee"
     t.string "payment_method"
+    t.bigint "disciple_id"
+    t.string "track_number"
+    t.index ["disciple_id"], name: "index_orders_on_disciple_id"
   end
 
   create_table "roles", force: :cascade do |t|
@@ -64,5 +76,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_31_234634) do
     t.index ["role_id"], name: "index_users_on_role_id"
   end
 
+  add_foreign_key "orders", "disciples"
   add_foreign_key "users", "roles"
 end

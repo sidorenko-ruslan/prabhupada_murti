@@ -21,7 +21,7 @@
       <%= form.password_field :password, :class => "form-control", :required => true %>
     </div>
     <div>
-      <%= form.label :email, "Роль" %>
+      <%= form.label :role_id, "Роль" %>
       <%= form.select :role_id, options_for_select(Role.all.map { |r| [r.name, r.id] }, selected: "1"), { include_blank: false }, {class: "form-select"} %>
     </div>
     <br/>

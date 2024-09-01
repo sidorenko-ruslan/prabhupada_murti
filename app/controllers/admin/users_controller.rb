@@ -5,7 +5,7 @@ class Admin::UsersController < ApplicationController
   before_action :require_admin
 
   def index
-    @users = User.all.order(created_at: :asc)
+    @users = User.includes(:role).order(created_at: :asc)
   end
 
   def new

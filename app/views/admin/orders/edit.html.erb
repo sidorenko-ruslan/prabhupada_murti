@@ -1,6 +1,6 @@
 <div class="container payment-block">
   <h1>Редактирование заказа</h1>
-  <%= form_with(model: @order, url: admin_order_path(@order)) do |form| %>
+  <%= form_with(model: [:admin, @order]) do |form| %>
     <% if @order.errors.any? %>
       <ul>
         <% @order.errors.full_messages.each do |message| %>
@@ -23,6 +23,14 @@
     <div>
       <%= form.label :address, "Адрес доставки" %>
       <%= form.text_area :address, :class => "form-control", :required => true %>
+    </div>
+    <div>
+      <%= form.label :disciple_id, "Ученик ШП" %>
+      <%= form.select :disciple_id, options_for_select(Disciple.all.map { |d| [d.name, d.id] }), {include_blank: true}, {class: "form-select"} %>
+    </div>
+    <div>
+      <%= form.label :track_number, "Трек номер посылки" %>
+      <%= form.text_area :track_number, :class => "form-control", :required => true %>
     </div>
     <br/>
     <%= form.submit "Изменить", class: "btn btn-primary" %>
