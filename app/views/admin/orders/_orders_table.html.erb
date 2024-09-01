@@ -13,6 +13,7 @@
       <th scope="col">Адрес доставки</th>
       <th scope="col">Дата создания</th>
       <th scope="col">Статус</th>
+      <th scope="col">Операции</th>
     </tr>
   </thead>
   <tbody>
@@ -28,6 +29,7 @@
         <td><%= order.address %></td>
         <td><%= order.created_at.strftime("%b %d, %Y at %I:%M %p") %></td>
         <td><%= t "order.#{order.status}" %></td>
+        <td><a href="<%= edit_admin_order_path(order) %>">Редактировать</a></td>
       </tr>
     <% end %>
   </tbody>

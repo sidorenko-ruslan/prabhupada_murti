@@ -1,4 +1,8 @@
 ru:
+  errors:
+    attributes:
+      email:
+        taken: "Пользователь с такой почтой уже зарегистрирован"
   activerecord:
     errors:
       models:

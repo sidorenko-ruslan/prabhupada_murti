@@ -1,0 +1,30 @@
+<div class="container payment-block">
+  <h1><%= title %></h1>
+  <%= form_with(model: [:admin, @user]) do |form| %>
+    <% if @user.errors.any? %>
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
+    <div>
+      <%= form.label :name, "Имя" %>
+      <%= form.text_field :name, :class => "form-control", :required => true %>
+    </div>
+    <div>
+      <%= form.label :email, "Почта" %>
+      <%= form.text_field :email, :class => "form-control", :required => true %>
+    </div>
+    <div>
+      <%= form.label :password, "Новый пароль" %>
+      <%= form.password_field :password, :class => "form-control", :required => true %>
+    </div>
+    <div>
+      <%= form.label :email, "Роль" %>
+      <%= form.select :role_id, options_for_select(Role.all.map { |r| [r.name, r.id] }, selected: "1"), { include_blank: false }, {class: "form-select"} %>
+    </div>
+    <br/>
+    <%= form.submit "Изменить", class: "btn btn-primary" %>
+<% end %>
+</div>

@@ -1,0 +1,23 @@
+<br/>
+<br/>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Имя</th>
+      <th scope="col">Почта</th>
+      <th scope="col">Роль</th>
+      <th scope="col">Операции</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.role.name %></td>
+        <td><a href="<%= edit_admin_user_path(user) %>">Редактировать</a></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<a href="<%= new_admin_user_path %>">Добавить</a>

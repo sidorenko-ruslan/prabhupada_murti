@@ -10,7 +10,8 @@ Rails.application.routes.draw do
     root :to => "orders#index"
     get "sponsors", to: "sponsors#index"
 
-    resources :orders
+    resources :orders, only: [:index, :edit, :update]
+    resources :users
   end
 
   namespace :api do
