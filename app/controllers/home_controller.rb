@@ -43,7 +43,7 @@ class HomeController < ApplicationController
       ]
     }
     receipt = JSON.generate(hash)
-    receipt = URI.encode_uri_component(URI.encode_uri_component(receipt))
+    receipt2 = URI.encode_uri_component(URI.encode_uri_component(receipt))
     signature = Digest::MD5.hexdigest("#{mrh_login}:#{out_sum}:#{order_id}:#{receipt}:#{password_1}")
 
     @script_src = "https://auth.robokassa.ru/Merchant/PaymentForm/FormMS.js?" \
@@ -53,7 +53,7 @@ class HomeController < ApplicationController
       "Description=#{inv_desc}&" \
       "SignatureValue=#{signature}&" \
       "Email=#{email}&" \
-      "Receipt=#{receipt}&" \
+      "Receipt=#{receipt2}&" \
       "Culture=ru"
 
     render "payment_form", layout: false
