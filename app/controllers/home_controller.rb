@@ -31,7 +31,7 @@ class HomeController < ApplicationController
 
   def payment_form
     mrh_login = "giftprabhupada"
-    out_sum = "20"
+    out_sum = "10"
     password_1 = "VYAZIu3AN2exAJ4V3m0i"
     order_id = params[:order_id]
     email = params[:email]
@@ -39,7 +39,7 @@ class HomeController < ApplicationController
     hash = {
       sno: "usn_income",
       items: [
-        {name: "Сувенирная статуэтка", quantity: 1, sum: 20, cost: 20, payment_method: "full_payment", payment_object: "commodity", tax: "none"}
+        {name: "Сувенирная статуэтка", quantity: 3, sum: 10, cost: 30, payment_method: "full_payment", payment_object: "commodity", tax: "none"}
       ]
     }
     receipt = URI.encode_uri_component(JSON.generate(hash))
