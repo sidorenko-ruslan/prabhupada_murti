@@ -113,8 +113,8 @@ body {
     color: #484542;
   }
 
-  button {
-    height: 6vh;
+  a[role="button"] {
+    height: 5vh;
     width: 23vw;
     background-color: #E2D7C1;
     padding: 16px, 48px, 16px, 48px;
@@ -158,9 +158,9 @@ body {
       line-height: 18px;
     }
 
-    button {
+    a[role="button"] {
       width: 100%;
-      height: 6vh;
+      height: 7vh;
     }
   }
 }
@@ -269,7 +269,7 @@ body {
     color: #484542;
   }
 
-  button {
+  a[role="button"] {
     height: 5vh;
     width: fit-content;
     background-color: #E2D7C1;
@@ -310,7 +310,7 @@ body {
       flex-direction: column;
     }
 
-    button {
+    a[role="button"] {
       width: 100%;
       height: 6vh;
     }
