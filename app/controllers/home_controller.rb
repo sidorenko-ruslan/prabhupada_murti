@@ -36,7 +36,13 @@ class HomeController < ApplicationController
     order_id = params[:order_id]
     email = params[:email]
     inv_desc = "Prabhupada Murti"
-    receipt = JSON.generate({items: [{sum: "20.0", name: "Сувенирная статуэтка", quantity: "1"}], payment_method: "full_prepayment", payment_object: "commodity", tax: "none"})
+    hash = {
+      sno: "osn",
+      items: [
+        {sum: 20, name: "Сувенирная статуэтка", quantity: 1, payment_method: "full_payment", payment_object: "commodity", tax: "none"}
+      ]
+    }
+    receipt = JSON.generate(hash)
     receipt = URI.encode_uri_component(receipt)
     signature = Digest::MD5.hexdigest("#{mrh_login}:#{out_sum}:#{order_id}:#{receipt}:#{password_1}")
 
