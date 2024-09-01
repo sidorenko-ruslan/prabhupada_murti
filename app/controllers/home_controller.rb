@@ -47,7 +47,7 @@ class HomeController < ApplicationController
       "Description=#{inv_desc}&" \
       "SignatureValue=#{signature}&" \
       "Email=#{email}&" \
-      "Receipt=#{receipt}" \
+      "Receipt=#{receipt}&" \
       "Culture=ru"
 
     render "payment_form", layout: false
