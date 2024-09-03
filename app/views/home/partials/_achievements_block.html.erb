@@ -17,40 +17,34 @@
     </div>
   </div>
   <div class="gbc-members-content">
+    <br/>
+    <br/>
     <h2><%= t "achievements_block.second_header" %></h2>
     <section class="splide splide-wide" aria-label="GBC Members">
       <div class="splide__track">
         <ul class="splide__list achievements_slide">
           <li class="splide__slide">
-            <div class="slide-item">
-              <iframe loading="lazy" id="slide-video-1" src="https://www.youtube.com/embed/pBGWazJnsuM?&controls=0&modestbranding=0" class="description-video-frame">
-              </iframe>
-              <img src="gbc_image_1.webp" class="slide-image">
+            <div class="gbc-slide-item">
+              <div class="item-media">
+                <iframe loading="lazy" id="slide-video-1" src="https://www.youtube.com/embed/pBGWazJnsuM?&controls=0&modestbranding=0" class="description-video-frame">
+                </iframe>
+                <img loading="lazy" src="gbc_images_1.png" class="slide-image">
+              </div>
+              <div class="item-description">
+                <p>Ачьютатма дас</p>
+              </div>
             </div>
           </li>
+          <% for i in 2..29 %>
+            <%= render "home/partials/achievements_slide_item", idx: i %>
+          <% end %>
           <li class="splide__slide">
-            <div class="slide-item">
-              <iframe loading="lazy" id="slide-video-2" src="https://www.youtube.com/embed/pBGWazJnsuM?&controls=0&modestbranding=0" class="description-video-frame">
-              </iframe>
-              <img src="gbc_image_2.webp" class="slide-image">
-            </div>
-          </li>
-          <li class="splide__slide">
-            <div class="slide-item">
-              <iframe loading="lazy" id="slide-video-3" src="https://www.youtube.com/embed/pBGWazJnsuM?&controls=0&modestbranding=0" class="description-video-frame">
-              </iframe>
-              <img src="gbc_image_3.webp" class="slide-image">
-            </div>
-          </li>
-          <li class="splide__slide">
-            <div class="slide-item">
-              <iframe loading="lazy" id="slide-video-4" src="https://www.youtube.com/embed/pBGWazJnsuM?&controls=0&modestbranding=0" class="description-video-frame">
-              </iframe>
-              <img src="gbc_image_4.webp" class="slide-image">
-            </div>
+            <div></div>
           </li>
         </ul>
       </div>
     </section>
+    <br/>
+    <br/>
   </div>
 </div>

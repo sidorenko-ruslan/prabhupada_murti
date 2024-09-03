@@ -9,13 +9,10 @@ document.addEventListener("turbo:load", (_event) => {
   }
 
   new Splide(".splide-wide", {
-    perPage: 4,
+    perPage: 5,
     gap: "2rem",
-    breakpoints: {
-      991: {
-        perPage: 1,
-      },
-    }
+    fixedWidth: "14rem",
+    width: 100%
   }).mount();
 
   Array.from(document.querySelectorAll(".slide-image")).forEach((image, index) => {

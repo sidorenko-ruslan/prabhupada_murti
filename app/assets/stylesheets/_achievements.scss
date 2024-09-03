@@ -1,5 +1,5 @@
 .achievements-block {
-  height: 60rem;
+  height: 64rem;
 
   h1 {
     font-family: PT Serif;
@@ -26,12 +26,6 @@
     line-height: 20.8px;
     text-align: left;
     color: #484542;
-  }
-
-  .gbc-members-content {
-    padding-left: 6rem;
-    padding-right: 6rem;
-    padding-top: 6rem;
   }
 
   .achievements-content {
@@ -66,7 +60,7 @@
     }
 
     a[role="button"] {
-      height: 5vh;
+      line-height: 4vh;
       width: 18vw;
       text-align: center;
       background-color: #B83E3E;
@@ -76,7 +70,58 @@
       font-family: Inter;
       font-size: 16px;
       font-weight: 400;
-      line-height: 19.36px;
+    }
+  }
+
+  .gbc-members-content {
+    padding-left: 6rem;
+    padding-right: 6rem;
+    height: fit-content;
+    width: 100%;
+
+    .gbc-slide-item {
+      background-color: #6E6051;
+      border-radius: 8px;
+      height: 24rem;
+      position: relative;
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: 20rem 4rem;
+
+      .item-media {
+        .slide-image {
+          border-radius: 8px 8px 0 0;
+          position: absolute;
+          width: 100%;
+          height: 20rem;
+          z-index: 3;
+        }
+
+        .description-video-frame {
+          border-radius: 8px 8px 0 0;
+          position: absolute;
+          width: 100%;
+          height: 20rem;
+          aspect-ratio: 0.5;
+        }
+      }
+
+      .item-description {
+        height: 4rem;
+        background-color: #6E6051;
+        align-self: center;
+        justify-self: center;
+        padding-top: 1.5rem;
+        border-radius: 8px;
+        p {
+          font-family: Inter;
+          font-size: 16px;
+          font-weight: 300;
+          line-height: 16px;
+          color: #FFFFFF;
+          text-align: center;
+        }
+      }
     }
   }
 }
@@ -106,34 +151,6 @@
       padding-top: 3rem;
       padding-left: 1rem;
       padding-right: 1rem;
-
-      .splide-wide {
-        padding-left: 6rem;
-        padding-right: 6rem;
-      }
     }
-  }
-}
-
-
-.slide-item {
-  background-color: white;
-  border-radius: 8px;
-  height: 25rem;
-  position: relative;
-
-  .slide-image {
-    border-radius: 8px;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 3;
-  }
-
-  .description-video-frame {
-    border-radius: 8px;
-    position: absolute;
-    width: 100%;
-    height: 100%;
   }
 }
