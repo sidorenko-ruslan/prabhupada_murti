@@ -11,8 +11,7 @@ document.addEventListener("turbo:load", (_event) => {
   new Splide(".splide-wide", {
     perPage: 5,
     gap: "2rem",
-    fixedWidth: "14rem",
-    width: 100%
+    fixedWidth: "14rem"
   }).mount();
 
   Array.from(document.querySelectorAll(".slide-image")).forEach((image, index) => {
