@@ -16,9 +16,9 @@ document.addEventListener("turbo:load", (_event) => {
 
   Array.from(document.querySelectorAll(".slide-image")).forEach((image, index) => {
     image.addEventListener("click", function() {
-      this.style.visibility = 'hidden';
-      this.style.display = "none";
-      document.getElementById(`slide-video-${index}`).click();
+      // this.style.visibility = 'hidden';
+      // this.style.display = "none";
+      // document.getElementById(`slide-video-${index}`).click();
     });
   });
 
