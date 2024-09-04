@@ -25,8 +25,8 @@
         <td><%= order.client_name %></td>
         <td><%= order.phone %></td>
         <td><%= order.email %></td>
-        <td><%= order.payment_sum %></td>
-        <td><%= order.payment_fee %></td>
+        <td><%= number_to_currency(order.payment_sum, unit: "руб", format: "%n %u", delimiter: " ") %></td>
+        <td><%= number_to_currency(order.payment_fee, unit: "руб", format: "%n %u", delimiter: " ") %></td>
         <td><%= order.payment_method %></td>
         <td><%= order.address %></td>
         <td><%= order.track_number %></td>
@@ -34,7 +34,10 @@
         <td><%= order.created_at.strftime("%b %d, %Y at %I:%M %p") %></td>
         <td><%= t "order.#{order.status}" %></td>
         <% if current_user.admin? %>
-          <td><a href="<%= edit_admin_order_path(order) %>">Редактировать</a></td>
+          <td>
+            <a href="<%= edit_admin_order_path(order) %>">Редактировать</a>
+            <%= link_to "Удалить", [:admin, order], data: {turbo_confirm: "Вы уверены?", turbo_method: :delete} %>
+          </td>
         <% end %>
       </tr>
     <% end %>

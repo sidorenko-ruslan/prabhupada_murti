@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     root :to => "orders#index"
     get "sponsors", to: "sponsors#index"
 
-    resources :orders, only: [:index, :edit, :update]
+    resources :orders, only: [:index, :edit, :update, :destroy]
     resources :users
     resources :disciples
   end
