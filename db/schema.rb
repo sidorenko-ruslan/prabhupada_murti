@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_09_01_015118) do
+ActiveRecord::Schema[7.1].define(version: 2024_09_05_100742) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -41,6 +41,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_01_015118) do
     t.string "payment_method"
     t.bigint "disciple_id"
     t.string "track_number"
+    t.string "comment"
+    t.integer "murti_count", default: 1, null: false
     t.index ["disciple_id"], name: "index_orders_on_disciple_id"
   end
 

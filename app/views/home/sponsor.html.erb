@@ -23,7 +23,7 @@
     <div>
       <%= form.label :murti_amount, "Количество мурти" %>
       <% input_params = {:class => "form-control", :required => true, min: 50, max: 100} %>
-      <% input_params = @manual_count ? input_params : input_params.merge(disabled: true) %>
+      <% input_params = @manual_count ? input_params : input_params.merge(readonly: true) %>
       <%= form.number_field :murti_amount, input_params %>
     </div>
     <div>

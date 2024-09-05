@@ -3,7 +3,7 @@ class Order < ApplicationRecord
 
   belongs_to :disciple, optional: true
 
-  validates :client_name, :phone, :email, :address, presence: true
+  validates :client_name, :phone, :email, :address, :murti_count, presence: true
 
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
 end

@@ -7,6 +7,7 @@
       <th scope="col">Имя заказчика</th>
       <th scope="col">Телефон</th>
       <th scope="col">Почта</th>
+      <th scope="col">Количество мурти</th>
       <th scope="col">Оплаченная сумма</th>
       <th scope="col">Комиссия</th>
       <th scope="col">Способ оплаты</th>
@@ -25,6 +26,7 @@
         <td><%= order.client_name %></td>
         <td><%= order.phone %></td>
         <td><%= order.email %></td>
+        <td><%= order.murti_count %></td>
         <td><%= number_to_currency(order.payment_sum, unit: "руб", format: "%n %u", delimiter: " ") %></td>
         <td><%= number_to_currency(order.payment_fee, unit: "руб", format: "%n %u", delimiter: " ") %></td>
         <td><%= order.payment_method %></td>
@@ -36,7 +38,9 @@
         <% if current_user.admin? %>
           <td>
             <a href="<%= edit_admin_order_path(order) %>">Редактировать</a>
-            <%= link_to "Удалить", [:admin, order], data: {turbo_confirm: "Вы уверены?", turbo_method: :delete} %>
+            <% unless order.payed? %>
+              <%= link_to "Удалить", [:admin, order], data: {turbo_confirm: "Вы уверены?", turbo_method: :delete} %>
+            <% end %>
           </td>
         <% end %>
       </tr>

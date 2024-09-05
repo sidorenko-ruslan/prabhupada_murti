@@ -24,6 +24,7 @@
       <%= form.label :address, "Адрес доставки" %>
       <%= form.text_area :address, :class => "form-control", :required => true %>
     </div>
+    <%= form.hidden_field :murti_count %>
     <br/>
     <%= form.submit "Перейти к оплате", class: "btn btn-light" %>
 <% end %>

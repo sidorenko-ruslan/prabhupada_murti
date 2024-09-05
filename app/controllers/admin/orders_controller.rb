@@ -23,7 +23,7 @@ class Admin::OrdersController < ApplicationController
 
   def destroy
     order = Order.find(params[:id])
-    order.destroy!
+    order.destroy! unless order.payed?
 
     redirect_to admin_root_path
   end
@@ -31,6 +31,6 @@ class Admin::OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:client_name, :phone, :email, :address, :track_number, :disciple_id)
+    params.require(:order).permit(:client_name, :phone, :email, :address, :track_number, :disciple_id, :comment)
   end
 end

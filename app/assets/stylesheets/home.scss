@@ -491,17 +491,19 @@ div::-webkit-scrollbar-thumb {
 /* buy block */
 
 .buy-block {
-  height: 42rem;
+  height: fit-content;
 
   background-image: url("buy-frame-right.webp");
   background-repeat: no-repeat;
   background-position: right 3rem;
+  padding-top: 2rem;
 
   .buy-content {
     display: grid;
     grid-template-columns: 30% 40%;
-    grid-template-rows: 16rem 16rem;
+    grid-template-rows: auto auto;
     justify-content: center;
+    height: fit-content;
     padding-top: 6rem;
     h1 {
       font-family: PT Serif;
@@ -521,31 +523,27 @@ div::-webkit-scrollbar-thumb {
       color: #484542;
     }
 
-    .form-image-block {
-      justify-self: center;
-      z-index: 2;
-    }
-
     .buy-content-header {
       vertical-align: bottom;
-      position: relative;
-      div {
-        position: absolute;
-        bottom: 0;
-        padding-right: 2rem;
-      }
+      height: fit-content;
+      padding-right: 2rem;
     }
 
     .buy-content-description {
       background-color: white;
       border-radius: 8px 0 0 8px;
-      position: relative;
       padding-left: 2rem;
+      padding-right: 1rem;
+      position: relative;
+      text-align: end;
+
+      img {
+        padding-right: 1rem;
+        margin-top: -14rem;
+      }
 
       p {
-        position: absolute;
-        bottom: 1rem;
-
+        padding-top: 1rem;
         font-family: PT Serif;
         font-size: 20px;
         font-style: italic;
@@ -566,6 +564,9 @@ div::-webkit-scrollbar-thumb {
       padding-left: 2rem;
       background-color: white;
       border-radius: 0 8px 8px 0;
+      display: flex;
+      flex-direction: column;
+      height: fit-content;
 
       h2 {
         font-family: Inter;
@@ -576,7 +577,7 @@ div::-webkit-scrollbar-thumb {
         color: #484542;
       }
 
-      button {
+      input[type="submit"] {
         background-color: #E2D7C1;
         border-radius: 8px;
         float: right;
@@ -586,6 +587,7 @@ div::-webkit-scrollbar-thumb {
         font-size: 16px;
         font-weight: 500;
         line-height: 5.5vh;
+        align-self: flex-end;
       }
 
       p.size-title {
@@ -597,11 +599,25 @@ div::-webkit-scrollbar-thumb {
         color: #343F56;
       }
 
+      input[type="number"] {
+        width: 60%;
+        border-radius: 50px;
+        height: 50%;
+        max-height: 50%;
+        border: 1px solid;
+        border-color: #6E6051;
+
+        &:focus {
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(61, 55, 55, 0.6);
+        }
+      }
+
       .form-info-block {
         display: grid;
-        height: 1rem;
+        height: fit-content;
         width: 100%;
-        grid-template-columns: 8% 58% auto;
+        grid-template-columns: auto auto auto auto;
+        grid-template-rows: auto auto;
 
         .size-round-block {
           border: 1px solid;
@@ -609,11 +625,10 @@ div::-webkit-scrollbar-thumb {
           border-radius: 50px;
           height: 50%;
           max-height: 50%;
-          width: 100%;
+          width: 50%;
         }
         .size-value {
           padding-top: 0.5rem;
-          padding-left: 1rem;
         }
         .form-price {
           float: right;
@@ -635,35 +650,28 @@ div::-webkit-scrollbar-thumb {
     height: fit-content;
     background-image: none;
     .buy-content {
-      grid-template-rows: 15rem auto 10rem auto;
+      grid-template-rows: auto auto auto auto;
       grid-template-columns: 100%;
       padding-top: 0;
 
       .buy-content-header {
         grid-row-start: 1;
-      }
-
-      .form-image-block {
         padding-left: 1rem;
         padding-right: 1rem;
-        justify-content: center;
-        img {
-          max-width: 100%;
-          max-height: 100%;
-        }
-      }
-
-      .buy-content-header {
-        div {
-          padding-left: 1rem;
-          padding-right: 1rem;
-        }
       }
 
       .buy-content-description {
         padding-left: 1rem;
         padding-right: 1rem;
         border-radius: 8px 8px 0 0;
+        text-align: center;
+
+        img {
+          padding-top: 1rem;
+          margin-top: 0;
+          max-width: 100%;
+          max-height: 100%;
+        }
       }
 
       .buy-content-form {
@@ -675,7 +683,7 @@ div::-webkit-scrollbar-thumb {
           height: auto;
         }
 
-        button {
+        input[type="submit"] {
           width: 100%;
         }
       }
@@ -686,7 +694,7 @@ div::-webkit-scrollbar-thumb {
 /* sponsors block */
 
 .sponsors-block {
-  height: 40rem;
+  height: fit-content;
   padding-left: 6rem;
   padding-right: 6rem;
 

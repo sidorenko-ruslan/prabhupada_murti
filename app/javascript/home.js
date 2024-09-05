@@ -1,12 +1,41 @@
 
 import Splide from '@splidejs/splide';
 
+function numberWithSpaces(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+}
+
+let inputBuyMurtiCount = document.getElementById("buy-murti-count");
+  inputBuyMurtiCount.addEventListener("change", function() {
+    if (this.value > 29) {
+      this.value = 29;
+    }
+    else if (this.value < 1) {
+      this.value = 1;
+    }
+    let countText = document.getElementById("buy-murti-count-text");
+    countText.innerHTML = numberWithSpaces(`${(this.value * 10800)}`) + " р.";
+});
+
+let statusModal = document.getElementById("status-modal");
+let button = document.getElementById("operation-button");
+if (statusModal) {
+  button.click();
+}
+
 document.addEventListener("turbo:load", (_event) => {
-  let statusModal = document.getElementById("status-modal");
-  let button = document.getElementById("operation-button");
-  if (statusModal) {
-    button.click();
-  }
+  let inputBuyMurtiCount = document.getElementById("buy-murti-count");
+  inputBuyMurtiCount.addEventListener("change", function() {
+    if (this.value > 29) {
+      this.value = 29;
+    }
+    else if (this.value < 1) {
+      this.value = 1;
+    }
+    let countText = document.getElementById("buy-murti-count-text");
+    countText.innerHTML = numberWithSpaces(`${(this.value * 10800)}`) + " р.";
+});
+
 
   new Splide(".splide-wide", {
     perPage: 5,

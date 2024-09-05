@@ -12,6 +12,27 @@ class HomeController < ApplicationController
 
   def buy
     @order = Order.new
+    @order.client_name = cookies[:client_name]
+    @order.phone = cookies[:phone]
+    @order.email = cookies[:email]
+    @order.address = cookies[:address]
+    @order.murti_count = params[:murti_count]
+  end
+
+  def make_purchase
+    @order = find_previous_unpayed_order
+    @order.address = order_params[:address] if @order
+    @order ||= Order.new(order_params)
+    cookies[:client_name] = @order.client_name
+    cookies[:phone] = @order.phone
+    cookies[:email] = @order.email
+    cookies[:address] = @order.address
+
+    if @order.save
+      redirect_to "/payment_form?order_id=#{@order.id}&email=#{@order.email}&murti_count=#{@order.murti_count}"
+    else
+      render "buy", status: 422
+    end
   end
 
   def sponsor
@@ -31,15 +52,18 @@ class HomeController < ApplicationController
 
   def payment_form
     mrh_login = "giftprabhupada"
-    out_sum = "10800"
-    password_1 = "VYAZIu3AN2exAJ4V3m0i"
+    murti_count = params[:murti_count].to_i
     order_id = params[:order_id]
     email = params[:email]
+
+    murti_price = 10800
+    out_sum = murti_price * murti_count
+    password_1 = "VYAZIu3AN2exAJ4V3m0i"
     inv_desc = "Prabhupada Murti"
     hash = {
       sno: "usn_income",
       items: [
-        {name: "Сувенирная статуэтка", quantity: 1, sum: 10800, cost: 10800, payment_method: "full_payment", payment_object: "commodity", tax: "none"}
+        {name: "Сувенирная статуэтка", quantity: 1, sum: out_sum, cost: murti_price, payment_method: "full_payment", payment_object: "commodity", tax: "none"}
       ]
     }
     receipt = URI.encode_uri_component(JSON.generate(hash))
@@ -59,23 +83,22 @@ class HomeController < ApplicationController
     render "payment_form", layout: false
   end
 
-  def make_purchase
-    @order = Order.new(order_params)
-    if @order.save
-      redirect_to "/payment_form?order_id=#{@order.id}&email=#{@order.email}"
-    else
-      render "buy", status: 422
-    end
-  end
-
   private
 
   def order_params
-    params.require(:order).permit(:client_name, :phone, :email, :address)
+    params.require(:order).permit(:client_name, :phone, :email, :address, :murti_count)
   end
 
   def sponsor_params
     params.require(:sponsor).permit(:name, :phone, :address, :murti_amount, :telegram, :whatsapp)
+  end
+
+  def find_previous_unpayed_order
+    Order.find_by(client_name: order_params[:client_name],
+      email: order_params[:email],
+      phone: order_params[:phone],
+      murti_count: order_params[:murti_count],
+      status: [:not_payed, :pay_error])
   end
 
   def set_language

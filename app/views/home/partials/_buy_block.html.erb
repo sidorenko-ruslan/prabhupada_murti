@@ -2,30 +2,36 @@
   <br/>
   <div class="buy-content">
     <div class="form-image-block">
-        <img src="buy-murti.webp">
     </div>
     <div class="buy-content-header">
-      <div>
-        <h1><%= t "buy_block.header" %></h1>
-        <p class="buy-description"><%= t "buy_block.description" %></p>
-      </div>
+      <h1><%= t "buy_block.header" %></h1>
+      <p class="buy-description"><%= t "buy_block.description" %></p>
     </div>
     <div class="buy-content-description">
+      <img src="buy-murti.webp">
       <p><%= raw t "buy_block.buy_description" %></p>
     </div>
+    <%= form_with url: "/buy", method: :get do |form| %>
     <div class="buy-content-form">
       <h2><%= t "buy_block.buy_header" %></h2>
-      <p class="size-title"><%= t "buy_block.size_title" %></p>
       <div class="form-info-block">
+        <p class="size-title"><%= t "buy_block.size_title" %></p>
+        <p></p>
+        <p class="size-title">Количество:</p>
+        <p></p>
         <div class="size-round-block"></div>
         <p class="size-title size-value"><%= t "buy_block.size_text" %></p>
-        <p class="form-price"><%= t "buy_block.price" %></p>
+        <input name="murti_count" id="buy-murti-count" type="number" min="1" max="29" class="form-control" value="1">
+        <p id="buy-murti-count-text" class="form-price"><%= t "buy_block.price" %></p>
       </div>
       <br/>
       <hr>
-      <%= button_to t("buy_block.button"), "/buy", :class => "btn btn-standard text-nowrap", :method => :get %>
-      <br/>
+      <%= form.submit t("buy_block.button"), :class => "btn btn-standard text-nowrap" %>
       <br/>
     </div>
+    <% end %>
   </div>
+  <br/>
+  <br/>
+  <br/>
 </div>
