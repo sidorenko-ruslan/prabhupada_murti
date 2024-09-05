@@ -5,7 +5,7 @@ class Admin::OrdersController < ApplicationController
   before_action :require_admin, only: [:edit, :update]
 
   def index
-    @orders = Order.includes(:disciple).order(created_at: :desc)
+    @orders = Order.includes(:disciple).order(created_at: :asc)
   end
 
   def edit
