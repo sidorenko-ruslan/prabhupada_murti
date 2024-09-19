@@ -38,5 +38,7 @@
   </nav>
 
     <%= yield %>
+
+    <%= javascript_include_tag "admin", "data-turbo-track": "reload", type: "module" %>
   </body>
 </html>

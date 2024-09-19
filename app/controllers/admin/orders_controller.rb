@@ -1,11 +1,13 @@
 class Admin::OrdersController < ApplicationController
   layout "application_admin"
 
+  DEFAULT_ORDER = {created_at: :asc}
+
   before_action :authenticate_user!
-  before_action :require_admin, only: [:edit, :update]
 
   def index
-    @orders = Order.includes(:disciple).order(created_at: :asc)
+    recors_order = params[:filter] ? { params[:filter] => params[:order] } : DEFAULT_ORDER
+    @orders = Order.includes(:disciple).order(recors_order)
   end
 
   def edit

@@ -1,22 +1,16 @@
 <br/>
 <br/>
-<div class="table-responsive">
-<table class="table table-striped">
+<div class="table-responsive orders-table-container">
+<table class="table table-striped table-bordered">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">Имя заказчика</th>
-      <th scope="col">Телефон</th>
-      <th scope="col">Почта</th>
-      <th scope="col">Количество мурти</th>
-      <th scope="col">Оплаченная сумма</th>
-      <th scope="col">Комиссия</th>
-      <th scope="col">Способ оплаты</th>
-      <th scope="col">Адрес доставки</th>
-      <th scope="col">Трек номер посылки</th>
-      <th scope="col">Ученик ШП</th>
-      <th scope="col">Дата создания</th>
-      <th scope="col">Статус</th>
+      <% order_filter_columns.each do |name, title| %>
+        <% order = order_direction(name, params[:filter], params[:order]) %>
+        <% arror = order_arror(name, params[:filter], order) %>
+        <th scope="col">
+          <a class="table-filter-link link-secondary icon-link" href="<%= "#{admin_root_path}"%>?filter=<%= "#{name}" %>&order=<%= order %>"><i class="bi <%= arror %>"></i><%= "#{title}" %></a>
+        </th>
+      <% end %>
       <th scope="col">Операции</th>
     </tr>
   </thead>
@@ -33,17 +27,14 @@
         <td><%= order.payment_method %></td>
         <td><%= order.address %></td>
         <td><%= order.track_number %></td>
+        <td><%= order.comment %></td>
         <td><%= order.disciple&.name %></td>
         <td><%= order.created_at.strftime("%b %d, %Y at %I:%M %p") %></td>
+        <td><%= order.updated_at.strftime("%b %d, %Y at %I:%M %p") %></td>
         <td><%= t "order.#{order.status}" %></td>
-        <% if current_user.admin? %>
-          <td>
-            <a href="<%= edit_admin_order_path(order) %>">Редактировать</a>
-            <% unless order.payed? %>
-              <%= link_to "Удалить", [:admin, order], data: {turbo_confirm: "Вы уверены?", turbo_method: :delete} %>
-            <% end %>
-          </td>
-        <% end %>
+        <td>
+          <a href="<%= edit_admin_order_path(order) %>">Редактировать</a>
+        </td>
       </tr>
     <% end %>
   </tbody>

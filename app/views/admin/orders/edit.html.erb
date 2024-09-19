@@ -8,21 +8,27 @@
         <% end %>
       </ul>
     <% end %>
-    <div>
-      <%= form.label :client_name, "Ф.И.О." %>
-      <%= form.text_field :client_name, :class => "form-control", :required => true %>
-    </div>
-    <div>
-      <%= form.label :phone, "Номер телефона" %>
-      <%= form.text_field :phone, :class => "form-control", :required => true %>
-    </div>
-    <div>
-      <%= form.label :email, "Почта" %>
-      <%= form.text_field :email, :class => "form-control", :required => true %>
-    </div>
+    <% if current_user.admin? %>
+      <div>
+        <%= form.label :client_name, "Ф.И.О." %>
+        <%= form.text_field :client_name, :class => "form-control", :required => true %>
+      </div>
+      <div>
+        <%= form.label :phone, "Номер телефона" %>
+        <%= form.text_field :phone, :class => "form-control", :required => true %>
+      </div>
+      <div>
+        <%= form.label :email, "Почта" %>
+        <%= form.text_field :email, :class => "form-control", :required => true %>
+      </div>
+    <% end %>
     <div>
       <%= form.label :address, "Адрес доставки" %>
       <%= form.text_area :address, :class => "form-control", :required => true %>
+    </div>
+    <div>
+      <%= form.label :comment, "Комментарий к заказу" %>
+      <%= form.text_area :comment, :class => "form-control" %>
     </div>
     <div>
       <%= form.label :disciple_id, "Ученик ШП" %>
@@ -30,7 +36,7 @@
     </div>
     <div>
       <%= form.label :track_number, "Трек номер посылки" %>
-      <%= form.text_area :track_number, :class => "form-control", :required => true %>
+      <%= form.text_area :track_number, :class => "form-control" %>
     </div>
     <br/>
     <%= form.submit "Изменить", class: "btn btn-primary" %>

@@ -12,3 +12,8 @@ body {
   align-items: flex-end;
   justify-content: flex-end;
 }
+
+.orders-table-container {
+  max-height: 80vh;
+  cursor: pointer;
+}
