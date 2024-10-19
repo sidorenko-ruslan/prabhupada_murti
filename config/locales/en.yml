@@ -1,4 +1,8 @@
 en:
+  errors:
+    attributes:
+      email:
+        taken: "A user with this email is already registered"
   activerecord:
     errors:
       models:
@@ -20,75 +24,141 @@ en:
     support: "Support"
     contacts: "Contacts"
   title_block:
-    header: "Make the most important and touching gift for  Srila Prabhupad’s disciples"
-    description: "And also invite Srila Prabhupada to your house in the form of a realistic looking Murti."
-    button: "To know more"
+    header: "Make the most meaningful and heartfelt gift for Srila Prabhupada's disciples"
+    description: "And also invite Srila Prabhupada into your home in the form of a realistic murti"
+    button: "Find out more"
   about_block:
     header: "About the project"
     goal_1: "Main goal"
-    goal_1_description: "Touching and meaningful gift for  Srila Prabhupad’s disciples."
+    goal_1_description: "To give a touching and meaningful gift to Srila Prabhupada’s disciples still with us."
     goal_2: "Second goal"
-    goal_2_description: "To give every devotee the opportunity to participate in this service."
+    goal_2_description: "To give every devotee an opportunity to participate in this service."
     goal_3: "Third goal"
-    goal_3_description: "Spreading the high-quality realistic murtis of Srila Prabhupada."
-    paragraph_1: "We want to give every disciple of Srila Prabhupada a smile and joy of meeting his spiritual master in the form of a realistic, “alive” murti. In this way? The object and center point of their entire life’s service will come to each of them, as if accepting their service and showing that he is always present with his disciples."
-    paragraph_2: "Every devotee can support this project by purchasing murti for himself. In this way, he will sponsor a gift for one of Srila Prabhupada’s disciples and invite a realistic form of Srila Prabhupada to his own home."
-    paragraph_3: "Join us in this service and help us to arrange this meeting of Srila Prabhupada with his disciples."
-    button: "Join the service"
+    goal_3_description: "To distribute the high-quality realistic murtis of Srila Prabhupada."
+    paragraph_1: "We are striving  to bring each of Srila Prabhupada's disciples that are still with us on this planet a smile and the joy of meeting their spiritual master in the form of a realistic, 'living' murti. In this way, the object and center of their life’s service will come to each of them, as if accepting their service and demonstrating that he is always close to his disciples."
+    paragraph_2: "Every devotee can support the project by acquiring a murti for themselves. By doing so, they will become a sponsor of this gift for one of Srila Prabhupada's disciples and invite Srila Prabhupada's realistic form into their home."
+    paragraph_3: "Join us in this service and help arrange the meeting of Srila Prabhupada and His disciples."
+    button: "Help us serve"
   middle_image_block:
     first_description: <strong>The silhouette of the tree</strong> depicted on the box includes sawdust from the actual tree under which Srila Prabhupada was born.
     second_description: <strong>The metal alloy of the murti</strong> includes coins, which were donated to sankirtana devotees for Srila Prabhupada’s books. They were collected from 25 countries, which were personally visited by Srila Prabhupada.
   achievements_block:
-    first_header: "Achieved"
-    paragraph_1: "In 2023, at the annual GBC meeting in Mayapur, the murtis were solemnly gifted to all GBC members."
-    paragraph_2: "The videos of Srila Prabhupada's disciples feedbacks and murti-giving ceremonies are published on a dedicated Youtube channel."
-    paragraph_3: "The launch of the promo cause great interest, and in just two days we received more than 200 requests from devotees who wanted to purchase murti."
+    first_header: "Achievments"
+    paragraph_1: "In 2023, at the annual GBC meeting in Mayapur, the murtis were solemnly presented to all GBC members."
+    paragraph_2: "Videos featuring feedback from Srila Prabhupada's disciples and the murti-giving ceremonies have been published on a dedicated YouTube channel."
+    paragraph_3: "The launch of the promotion generated great interest, and within just two days, we received over 200 requests from devotees wishing to purchase a murti."
     second_header: "A list of GBC members who were presented with murtis"
     button: "Visit us on Youtube"
+  gbc_members_block:
+    member_1: Gopal Krishna Goswami
+    member_2: Jayapataka Swami
+    member_3: Devamrita Swami
+    member_4: Bhakti Chaitanya Swami
+    member_5: Chaitanya Carana Dasa
+    member_6: Bhakti Vaibhava Swami
+    member_7: Bhanu Swami
+    member_8: Acyutatma Das
+    member_9: Anuttama Dasa
+    member_10: Bir Krishna Goswami
+    member_11: Badrinarayana Swami
+    member_12: Chandrasekhara Acharya Dasa
+    member_13: Devaki Nandana Dasa
+    member_14: Acyuta Priya Dasa
+    member_15: Dina Sharana Dasis
+    member_16: Govardhana Dasa
+    member_17: Gauranga Dasa
+    member_18: Giridhari Swami
+    member_19: Guru Prasad Swami
+    member_20: Hrdaya Chaitanya Dasa
+    member_21: Bhakti Purusottama Swami
+    member_22: Kavichandra Swami
+    member_23: Madhu Sevita Dasa
+    member_24: Malati Devi Dasi
+    member_25: Prahladananda Swami
+    member_26: Radha Krsna Dasa
+    member_27: Ramai Swami
+    member_28: Revati Raman Dasa
+    member_29: Tapana Misha Dasa
+    member_30: Virabahu Dasa
   reviews_block:
     header: "Feedback from Srila Prabhupada's disciples"
-    review_1_name: "HG Pankajanghri Prabhu"
-    review_1_text: "Every devotee can support this project by purchasing murti for himself. In this way, he will sponsor a gift for one of Srila Prabhupada’s disciples, helping to spread spiritual wealth and inspiration."
+    review_1_name: "Mukunda Goswami"
+    review_2_name: "Bhakti Vijnana Goswami"
+    review_3_name: "Janananda Goswami"
+    review_4_name: "Bhakti Chaitanya Swami"
+    review_5_name: "Hari Sauri Prabhu"
+    review_6_name: "Gauranga Dasa, GBC member"
+    review_7_name: "Janananda Maharaj"
+    review_8_name: "Gauranga Dasa, GBC member"
+    review_1_text: "All devotees should have such a murti at home, especially if they are disciples of Srila Prabhupada."
+    review_2_text: "By helping Srila Prabhupada's disciples reconnect with him in the form of a murti in their lives, we express our gratitude to them for introducing Srila Prabhupada into ours."
+    review_3_text: "This project is a ticket to the spiritual world for everyone who takes part in it."
+    review_4_text: "I support this project and encourage everyone to take part in it, to gift these beautiful miniature murtis of Srila Prabhupada to all his disciples and other devotees."
+    review_5_text: "This is the best gift I have ever received."
+    review_6_text: "The murti is very well made and looks exactly like Srila Prabhupada, capturing his mood. Now, this murti serves as a constant reminder of his presence in my life."
+    review_7_text: "Prabhupada is very kind. Thank you for this wonderful, unforgettable gift."
+    review_8_text: "I thank all the devotees behind this important and inspiring project, and I am ready to give it my full support"
   buy_block:
     header: "Buying the murti"
-    description: "Every devotee can support this project by purchasing murti for himself. In this way, he will sponsor a gift for one of Srila Prabhupada’s disciples and invite a realistic form of Srila Prabhupada to his own home."
-    buy_description: "By purchasing one murti, <em>вyou sponsor a murti for one disciple</em> Srila Prabhupada."
+    description: "Every devotee can support this project by purchasing a murti for themselves. By doing so, they will sponsor a gift for one of Srila Prabhupada’s disciples and invite a realistic form of Srila Prabhupada into their own home."
+    buy_description: "By purchasing one murti, <em>you sponsor a murti for one</em> of Srila Prabhupada's disciples"
     buy_header: "Srila Prabhupada's murti"
     size_title: "Murti size:"
     size_text: "54мм х 40мм х 42мм"
-    price: "10 800 р."
-
+    price: "130 $."
+    count: "Count:"
     button: "Buy a murti"
   sponsors_block:
     header: "Become a sponsor"
-    description: "You can support this project on a larger scale and sponsor a gift for more of Srila Prabhupada's disciples. You can also get nice bonuses in the form of rare ISKCON relics"
+    description: "You can support this project on a larger scale by sponsoring gifts for more of Srila Prabhupada's disciples. In addition, you'll receive special bonuses in the form of rare ISKCON relics."
     card_header: "Srila Prabhupada's murti"
     card_point_1: "One murti as a gift for you"
-    card_point_2: "A piece of the very tree under which Srila Prabhupada was born"
-    card_point_3: "A piece of thread of japa beads from the very first initiation in ISKCON, on which Srila Prabhupada chanted himself"
-    card_point_4: "Mahaprasadam jewelry from the beautiful Deities of our main temples in Vrindavan and Mayapur"
+    card_point_2: "Mahaprasadam jewelry from the beautiful Deities of our main temples in Vrindavan and Mayapur"
+    card_point_3: "A piece of the very tree under which Srila Prabhupada was born"
+    card_point_4: "A piece of thread from the japa beads used during the very first initiation in ISKCON, on which Srila Prabhupada personally chanted"
     count_text: "Count:"
-    price_1: "60 000 р."
-    price_2: "167 400 р."
-    price_3: "275 400 р."
+    price_1: "60 000 rub."
+    price_2: "167 400 rub."
+    price_3: "275 400 rub."
     count_manual_text: "Own count:"
     button: "Become a sponsor"
   questions_block:
     header: "FAQ"
-    first_question: "Who can worship this murti?"
+    first_question: "Who can worship the murti?"
+    first_question_description: "There are no requirements from our side, and we do not set any standards of worship for you personally, as this is not within our authority. You may consult on this topic with your Spiritual teacher or mentor."
     second_question: "Can I perform an abhisheka for this murti?"
+    second_question_description: "Abhisheka can be performed, but it is important to immediately and thoroughly dry the murti of Srila Prabhupada with love and care, and to dry it as much as possible. You can place it in the sun after the abhisheka. The thing is, if moisture is left on the brass, it will darken in those areas. The murti is made of brass, so all the rules for caring for brass items apply to it."
     third_question: "How to perform an installation of this murti?"
-    fourth_question: "Условия доставки"
-    fourth_question_description_1: "Как оформить доставку: При оформлении заказа укажите пожалуйста в обязательных полях свои актуальные адрес и номер телефона. Наши менеджеры свяжутся с вами для уточнения деталей и оформления доставки."
-    fourth_question_description_2: "Партнеры:<br>По России мы отправляем Почтой России и транспортной компанией СДЭК."
-    fourth_question_description_3: "А можно отправить в мой город в другой стране?<br/> Да, мы отправляем по всему миру. После оформления заказа с вами свяжется менеджер для уточнения деталей отправки, оставляйте пожалуйста актуальные контакты."
-    fourth_question_description_4: "Стоимость:<br/>Для России: стоимость доставки рассчитывается в зависимости от региона и обычно составляет от 200 до 800р. Для других стран: стоимость и способы доставки рассчитывается индивиально. Вместе с менеджером вы сможете выбрать подходящий для вас вариант доставки и согласовать стоимость."
-    fourth_question_description_5: "Сроки доставки:<br/>Для России: сроки доставки зависят от региона, средние сроки прибытия посылки после отправки составляют 7-14 дней.<br/>Для других стран: для каждой страны все индивидуально, уточняйте актуальную информацию у менеджера."
-    fifth_question: "Способы возврата"
-    fifth_question_description: "Возврат или обмен можно бесплатно оформить в течении 30 дней после покупки, если он Вам не подошел.<br/>Товар оказался некачественным — сообщите нам об этом через своего менеджера или по телефону +79953018108. Мы вернем товар в магазин или заменим аналогичным."
+    third_question_description: "The same answer as to the question: «Who can worship the murti?»."
+    fourth_question: "Delivery terms"
+    fourth_question_description_1: "<strong>How to arrange delivery:</strong><br/> When placing an order, please provide your current address and phone number in the required fields. Our managers will contact you to clarify details and arrange delivery."
+    fourth_question_description_2: "<strong>Partners:</strong><br/>In Russia, we ship via Russian Post and the transport company SDEK"
+    fourth_question_description_3: "<strong>Can it be sent to my city in another country?</strong><br/> Yes, we ship worldwide. After placing your order, a manager will contact you to clarify the shipping details, so please provide your current contact information."
+    fourth_question_description_4: "<strong>Cost:</strong><br/>For Russia: the cost of delivery is calculated depending on the region and usually ranges from 200 to 800 rubles. For other countries: the cost and methods of delivery are calculated individually. Together with the manager, you will be able to choose a suitable delivery option and agree on the cost."
+    fourth_question_description_5: "<strong>Delivery times:</strong><br/>For Russia: delivery times depend on the region, with average arrival times of 7-14 days after dispatch.<br>For other countries: everything is individual for each country, please check the current information with the manager."
+    fifth_question: "Returns or Exchanges"
+    fifth_question_description: "You can arrange a free return or exchange within 30 days of purchase if the item doesn't suit you. If the product is defective, please inform us through your manager or by phone at +79953018108. We will either return the item to the store or replace it with a similar one."
   contacts_block:
     header: "Contacts"
     russia: "Russia"
     india: "India"
     china: "China"
-    contact_name: "Shyam Gaura das"
+    contact_name: "Shyama Gaura Das"
+    donation_button: "Make a donation"
+    company: "IP Semerenko Mikhail Alexandrovich OGRNIP: 324385000089379"
+    public_offer: "Public Offer Agreement"
+    telegram: "Telegram"
+  buy_success_modal:
+    title: "Notification"
+    message: "Payment was successful"
+    button: "Close"
+  requisite-modal:
+    title: "Details for donations"
+    button: "Close"
+  buy_page:
+    title: "Buy a murti"
+    client_name: "Full name"
+    phone: "Phone number"
+    email: "Email"
+    address: "Delivery address"
+    submit: "Proceed to payment"

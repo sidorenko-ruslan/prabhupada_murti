@@ -6,6 +6,9 @@ class HomeController < ApplicationController
 
   def index
     @operation_status = params[:operation_status]
+    @main_video = main_video_url
+    @achievements_video = achievements_video_url
+    cookies[:lang] = params[:lang]
 
     request.variant = browser.device.mobile? ? :mobile : :desktop
   end
@@ -29,7 +32,7 @@ class HomeController < ApplicationController
     cookies[:address] = @order.address
 
     if @order.save
-      redirect_to "/payment_form?order_id=#{@order.id}&email=#{@order.email}&murti_count=#{@order.murti_count}"
+      redirect_to "/payment_form?order_id=#{@order.id}&email=#{@order.email}&murti_count=#{@order.murti_count}&lang=#{cookies[:lang]}"
     else
       render "buy", status: 422
     end
@@ -55,8 +58,9 @@ class HomeController < ApplicationController
     murti_count = params[:murti_count].to_i
     order_id = params[:order_id]
     email = params[:email]
+    lang = params[:lang]
 
-    murti_price = 10800
+    murti_price = locale_price(lang)
     out_sum = murti_price * murti_count
     password_1 = "VYAZIu3AN2exAJ4V3m0i"
     inv_desc = "Prabhupada Murti"
@@ -78,12 +82,24 @@ class HomeController < ApplicationController
       "SignatureValue=#{signature}&" \
       "Email=#{email}&" \
       "Receipt=#{receipt2}&" \
-      "Culture=ru"
+      "Culture=#{lang}"
 
     render "payment_form", layout: false
   end
 
   private
+
+  def main_video_url
+    params[:lang] == "en" ? "https://www.youtube.com/embed/Y5f27LOze0s" : "https://www.youtube.com/embed/jfpb7slIhEk"
+  end
+
+  def achievements_video_url
+    params[:lang] == "en" ? "https://www.youtube.com/embed/--01Ltg6qpk?controls=0&modestbranding=0" : "https://www.youtube.com/embed/KwDTI3tGnO8?controls=0&modestbranding=0"
+  end
+
+  def locale_price(lang)
+    lang == "en" ? 13500 : 10800
+  end
 
   def order_params
     params.require(:order).permit(:client_name, :phone, :email, :address, :murti_count)

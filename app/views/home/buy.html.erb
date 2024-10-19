@@ -1,5 +1,5 @@
 <div class="container payment-block">
-  <h1>Купить мурти</h1>
+  <h1><%= t "buy_page.title" %></h1>
   <%= form_with(model: @order, url: "/make_purchase") do |form| %>
     <% if @order.errors.any? %>
       <ul>
@@ -9,23 +9,23 @@
       </ul>
     <% end %>
     <div>
-      <%= form.label :client_name, "Ф.И.О." %>
+      <%= form.label :client_name, t("buy_page.client_name") %>
       <%= form.text_field :client_name, :class => "form-control", :required => true %>
     </div>
     <div>
-      <%= form.label :phone, "Номер телефона" %>
+      <%= form.label :phone, t("buy_page.phone") %>
       <%= form.text_field :phone, :class => "form-control", :required => true %>
     </div>
     <div>
-      <%= form.label :email, "Почта" %>
+      <%= form.label :email, t("buy_page.email") %>
       <%= form.text_field :email, :class => "form-control", :required => true %>
     </div>
     <div>
-      <%= form.label :address, "Адрес доставки" %>
+      <%= form.label :address, t("buy_page.address") %>
       <%= form.text_area :address, :class => "form-control", :required => true %>
     </div>
     <%= form.hidden_field :murti_count %>
     <br/>
-    <%= form.submit "Перейти к оплате", class: "btn btn-light" %>
+    <%= form.submit t("buy_page.submit"), class: "btn btn-light" %>
 <% end %>
 </div>
