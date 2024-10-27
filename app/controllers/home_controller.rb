@@ -60,29 +60,53 @@ class HomeController < ApplicationController
     email = params[:email]
     lang = params[:lang]
 
-    murti_price = locale_price(lang)
-    out_sum = murti_price * murti_count
+    murti_price_ru = locale_price("ru")
+    murti_price_en = locale_price("en")
+    out_sum_ru = murti_price_ru * murti_count
+    out_sum_en = murti_price_en * murti_count
     password_1 = "VYAZIu3AN2exAJ4V3m0i"
     inv_desc = "Prabhupada Murti"
-    hash = {
+    hash_ru = {
       sno: "usn_income",
       items: [
-        {name: "Сувенирная статуэтка", quantity: murti_count, sum: out_sum, cost: murti_price, payment_method: "full_payment", payment_object: "commodity", tax: "none"}
+        {name: "Сувенирная статуэтка", quantity: murti_count, sum: out_sum_ru, cost: murti_price_ru, payment_method: "full_payment", payment_object: "commodity", tax: "none"}
       ]
     }
-    receipt = URI.encode_uri_component(JSON.generate(hash))
-    receipt2 = URI.encode_uri_component(receipt)
-    signature = Digest::MD5.hexdigest("#{mrh_login}:#{out_sum}:#{order_id}:#{receipt}:#{password_1}")
+    hash_en = {
+      sno: "usn_income",
+      items: [
+        {name: "Souvenir figurine", quantity: murti_count, sum: out_sum_en, cost: murti_price_en, payment_method: "full_payment", payment_object: "commodity", tax: "none"}
+      ]
+    }
+    receipt_ru = URI.encode_uri_component(JSON.generate(hash_ru))
+    receipt2_ru = URI.encode_uri_component(receipt_ru)
 
-    @script_src = "https://auth.robokassa.ru/Merchant/PaymentForm/FormMS.js?" \
+    receipt_en = URI.encode_uri_component(JSON.generate(hash_en))
+    receipt2_en = URI.encode_uri_component(receipt_en)
+
+    signature_ru = Digest::MD5.hexdigest("#{mrh_login}:#{out_sum_ru}:#{order_id}:#{receipt_ru}:#{password_1}")
+    signature_en = Digest::MD5.hexdigest("#{mrh_login}:#{out_sum_en}:#{order_id}:#{receipt_en}:#{password_1}")
+
+
+    @script_src_ru = "https://auth.robokassa.ru/Merchant/PaymentForm/FormMS.js?" \
       "MerchantLogin=#{mrh_login}&" \
-      "OutSum=#{out_sum}&" \
+      "OutSum=#{out_sum_ru}&" \
       "InvId=#{order_id}&" \
       "Description=#{inv_desc}&" \
-      "SignatureValue=#{signature}&" \
+      "SignatureValue=#{signature_ru}&" \
       "Email=#{email}&" \
-      "Receipt=#{receipt2}&" \
-      "Culture=#{lang}"
+      "Receipt=#{receipt2_ru}&" \
+      "Culture=ru"
+
+    @script_src_en = "https://auth.robokassa.ru/Merchant/PaymentForm/FormMS.js?" \
+      "MerchantLogin=#{mrh_login}&" \
+      "OutSum=#{out_sum_en}&" \
+      "InvId=#{order_id}&" \
+      "Description=#{inv_desc}&" \
+      "SignatureValue=#{signature_en}&" \
+      "Email=#{email}&" \
+      "Receipt=#{receipt2_en}&" \
+      "Culture=en"
 
     render "payment_form", layout: false
   end
