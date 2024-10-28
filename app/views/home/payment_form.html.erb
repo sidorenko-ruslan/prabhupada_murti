@@ -1,15 +1,27 @@
 <html>
 <body>
-  <h2>Способы оплаты</h2>
-  <h3>Для граждан России</h3>
-  <script language="JavaScript" src="<%= @script_src_ru %>"></script>
-  <br/>
-  <h3>Other countries</h3>
+  <% if @language == "ru" %>
+    <h2>Способы оплаты</h2>
+    <h3>Для граждан России</h3>
+    <script language="JavaScript" src="<%= @script_src_ru %>"></script>
+    <br/>
+  <% else %>
+  <h2>Payment methods</h2>
   <script language="JavaScript" src="<%= @script_src_en %>"></script>
   <br/>
-  <p>You can also make payment using Paypal or Revolut. In this case you should make donation and report about it in any of the available ways indicated in the contacts on the site.</p>
+  <p>Robokassa accept all countries, except USA an Ukraine.</p>
+  <p>From these countries you could make payment using <strong>Paypal</strong> or <strong>Revolut</strong>.</p>
+  <p>Please make a donation in equivalent of oficial prices of murti:</p>
+  <p><strong>130 USD or 120EUR</strong></p>
   <a href="https://www.paypal.com/donate/?business=JJEXQGSRSBYPE&no_recurring=0&item_name=Support+Madana-mohana+dasa%27s+service+and+preaching.&currency_code=USD">Paypal</a>
   <br/>
   <a href="https://revolut.me/maximjalk">Revolut</a>
+  <p>After proceed the payment, please send us the bill:</p>
+  <p>1) On telegram - <strong>https://t.me/giftprabhupada</strong></p>
+  <p>2) By email - <strong>shyamagauradas@gmail.com</strong></p>
+  <br/>
+  <p>After recieving the bill, we will send you your Srila Prabhupada.</p>
+  <% end %>
+
 </body>
 </html>

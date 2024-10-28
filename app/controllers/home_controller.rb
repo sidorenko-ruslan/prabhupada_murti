@@ -59,6 +59,7 @@ class HomeController < ApplicationController
     order_id = params[:order_id]
     email = params[:email]
     lang = params[:lang]
+    @language = lang
 
     murti_price_ru = locale_price("ru")
     murti_price_en = locale_price("en")
@@ -141,12 +142,20 @@ class HomeController < ApplicationController
       status: [:not_payed, :pay_error])
   end
 
-  def set_language
-    if params[:lang].present?
-      cookies.permanent[:lang] = params[:lang]
-    end
+  def best_locale_from_request
+    return I18n.default_locale unless request.headers.key?("HTTP_ACCEPT_LANGUAGE")
 
-    lang = cookies[:lang]&.to_sym
+    string = request.headers.fetch("HTTP_ACCEPT_LANGUAGE")
+    locale = AcceptLanguage.parse(string).match(*I18n.available_locales)
+
+    return I18n.default_locale if locale.nil?
+
+    locale
+  end
+
+  def set_language
+    lang = params[:lang]&.to_sym || cookies[:lang]&.to_sym || best_locale_from_request
+    cookies.permanent[:lang] = lang
     @language = lang == :ru ? "Рус" : "Eng"
     if I18n.available_locales.include?(lang)
       I18n.locale = lang

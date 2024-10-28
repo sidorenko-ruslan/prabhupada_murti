@@ -6,6 +6,8 @@ function numberWithSpaces(x) {
 }
 
 let inputBuyMurtiCount = document.getElementById("buy-murti-count");
+let langValue = document.getElementById("input-lang").value;
+
   inputBuyMurtiCount.addEventListener("change", function() {
     if (this.value > 29) {
       this.value = 29;
@@ -13,8 +15,9 @@ let inputBuyMurtiCount = document.getElementById("buy-murti-count");
     else if (this.value < 1) {
       this.value = 1;
     }
+    let price = langValue == "en" ? 130 : 10800;
     let countText = document.getElementById("buy-murti-count-text");
-    countText.innerHTML = numberWithSpaces(`${(this.value * 10800)}`) + " р.";
+    countText.innerHTML = numberWithSpaces(`${(this.value * price)}`) + " р.";
 });
 
 let statusModal = document.getElementById("status-modal");
@@ -33,7 +36,9 @@ document.addEventListener("turbo:load", (_event) => {
       this.value = 1;
     }
     let countText = document.getElementById("buy-murti-count-text");
-    countText.innerHTML = numberWithSpaces(`${(this.value * 10800)}`) + " р.";
+    let price = langValue == "en" ? 130 : 10800;
+
+    countText.innerHTML = numberWithSpaces(`${(this.value * price)}`) + " р.";
 });
 
 

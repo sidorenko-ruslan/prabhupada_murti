@@ -12,6 +12,9 @@
 <%= render "home/partials/contacts_block" %>
 <%= render "home/partials/footer_block" %>
 
+<input type="hidden" id="input-lang" value="<%= @language %>">
+
+
 <% if @operation_status == "success" %>
   <%= render "home/partials/buy_success_modal" %>
 <% end %>
