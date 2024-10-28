@@ -115,11 +115,11 @@ class HomeController < ApplicationController
   private
 
   def main_video_url
-    params[:lang] == "en" ? "https://www.youtube.com/embed/Y5f27LOze0s" : "https://www.youtube.com/embed/jfpb7slIhEk"
+    cookies[:lang].to_s == "en" ? "https://www.youtube.com/embed/Y5f27LOze0s" : "https://www.youtube.com/embed/jfpb7slIhEk"
   end
 
   def achievements_video_url
-    params[:lang] == "en" ? "https://www.youtube.com/embed/--01Ltg6qpk?controls=0&modestbranding=0" : "https://www.youtube.com/embed/KwDTI3tGnO8?controls=0&modestbranding=0"
+    cookies[:lang].to_s == "en" ? "https://www.youtube.com/embed/--01Ltg6qpk?controls=0&modestbranding=0" : "https://www.youtube.com/embed/KwDTI3tGnO8?controls=0&modestbranding=0"
   end
 
   def locale_price(lang)
