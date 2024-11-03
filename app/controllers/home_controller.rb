@@ -8,7 +8,7 @@ class HomeController < ApplicationController
     @operation_status = params[:operation_status]
     @main_video = main_video_url
     @achievements_video = achievements_video_url
-    cookies[:lang] = params[:lang]
+    cookies[:lang] ||= params[:lang]
 
     request.variant = browser.device.mobile? ? :mobile : :desktop
   end
