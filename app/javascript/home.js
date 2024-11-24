@@ -2,7 +2,7 @@
 import Splide from '@splidejs/splide';
 
 function numberWithSpaces(x) {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ").replace('.', ',');
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }
 
 let inputBuyMurtiCount = document.getElementById("buy-murti-count");
