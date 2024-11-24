@@ -2,7 +2,9 @@
   <div class="title-block-content">
     <div class="description-block">
       <h1><%= t "title_block.header" %></h1>
-      <p><%= t "title_block.description" %></p>
+      <% if @language == "Рус" %>
+        <p><%= t "title_block.description" %></p>
+      <% end %>
       <br/>
       <a href="#about" class="btn btn-standard text-nowrap content-btn" role="button"><%= t "title_block.button" %></a>
     </div>
