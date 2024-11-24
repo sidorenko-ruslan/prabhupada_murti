@@ -20,7 +20,11 @@
         <p class="card-price"><%= t "sponsors_block.price_1" %></p>
       </div>
       <br/>
-      <%= button_to t("sponsors_block.button"), "/sponsor", :class => "btn btn-standard text-nowrap", :method => :get, :params => {count: 10} %>
+      <% if @language == "Eng" %>
+        <a href="https://www.gofundme.com/f/giftprabhupada" class="btn btn-standard text-nowrap content-btn" role="button"><%= t "sponsors_block.button" %></a>
+      <% else %>
+        <%= button_to t("sponsors_block.button"), "/sponsor", :class => "btn btn-standard text-nowrap", :method => :get, :params => {count: 10} %>
+      <% end %>
     </div>
     <div class="card-item">
       <div class="card-header">
@@ -41,7 +45,11 @@
         <p class="card-price"><%= t "sponsors_block.price_2" %></p>
       </div>
       <br/>
-      <%= button_to t("sponsors_block.button"), "/sponsor", :class => "btn btn-standard text-nowrap", :method => :get, :params => {count: 30} %>
+      <% if @language == "Eng" %>
+        <a href="https://www.gofundme.com/f/giftprabhupada" class="btn btn-standard text-nowrap content-btn" role="button"><%= t "sponsors_block.button" %></a>
+      <% else %>
+        <%= button_to t("sponsors_block.button"), "/sponsor", :class => "btn btn-standard text-nowrap", :method => :get, :params => {count: 30} %>
+      <% end %>
     </div>
     <div class="card-item">
       <div class="card-header">
@@ -63,7 +71,11 @@
         <p class="card-price"><%= t "sponsors_block.price_3" %></p>
       </div>
       <br/>
-      <%= button_to t("sponsors_block.button"), "/sponsor", :class => "btn btn-standard text-nowrap", :method => :get, :params => {count: 50, manual: true} %>
+      <% if @language == "Eng" %>
+        <a href="https://www.gofundme.com/f/giftprabhupada" class="btn btn-standard text-nowrap content-btn" role="button"><%= t "sponsors_block.button" %></a>
+      <% else %>
+        <%= button_to t("sponsors_block.button"), "/sponsor", :class => "btn btn-standard text-nowrap", :method => :get, :params => {count: 50, manual: true} %>
+      <% end %>
     </div>
   </div>
   <br/>
