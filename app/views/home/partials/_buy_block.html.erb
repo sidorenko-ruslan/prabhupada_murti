@@ -26,11 +26,7 @@
       </div>
       <br/>
       <hr>
-      <% if @language == "ru" %>
-        <%= form.submit t("buy_block.button"), :class => "btn btn-standard text-nowrap" %>
-      <% else %>
-        <p class="btn btn-standard text-nowrap"><a href="https://www.gofundme.com/f/giftprabhupada" target=”_blank”><%= t "buy_block.button" %></a></p>
-      <% end %>
+      <%= form.submit t("buy_block.button"), :class => "btn btn-standard text-nowrap" %>
       <br/>
     </div>
     <% end %>
