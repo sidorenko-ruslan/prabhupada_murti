@@ -818,6 +818,17 @@ div::-webkit-scrollbar-thumb {
         font-weight: 550;
         line-height: 5.5vh;
       }
+
+      a[role="button"] {
+        background-color: #E2D7C1;
+        border-radius: 8px;
+        color: #000000;
+        width: fit-content;
+        font-family: Inter;
+        font-size: 18px;
+        font-weight: 550;
+        line-height: 5.5vh;
+      }
     }
   }
 }
