@@ -22,6 +22,10 @@ class HomeController < ApplicationController
     @order.murti_count = params[:murti_count]
   end
 
+  def add_disciple
+    
+  end
+
   def make_purchase
     @order = find_previous_unpayed_order
     @order.address = order_params[:address] if @order
