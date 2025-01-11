@@ -22,6 +22,10 @@ class HomeController < ApplicationController
     @order.murti_count = params[:murti_count]
   end
 
+  def disciple
+    
+  end
+  
   def add_disciple
     
   end
