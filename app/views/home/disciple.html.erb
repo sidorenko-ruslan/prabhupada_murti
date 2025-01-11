@@ -1,0 +1,40 @@
+<div class="container create-sponsor-block">
+  <h1>Help us get a contact information of Srila Prabhupada disciples.</h1>
+  <h2>Please give us a correct contact information, especially the phone numbers and emails, so we could contact you or Srila Prabhupada disciple to deliver murti.</h2>
+  <%= form_with(model: @disciple, url: "/add_disciple") do |form| %>
+    <% if @disciple.errors.any? %>
+      <ul>
+        <% @disciple.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
+    <div>
+      <%= form.label :spritual_name, "Spiritual name" %>
+      <%= form.text_field :spritual_name, :class => "form-control", :required => true %>
+    </div>
+    <div>
+      <%= form.label :initiation, "Year and place of initiation (if don't know - leave it empty)" %>
+      <%= form.text_field :initiation, :class => "form-control", :required => false %>
+    </div>
+    <div>
+      <%= form.label :fullname, "Full name" %>
+      <%= form.text_area :fullname, :class => "form-control", :required => true %>
+    </div>
+    <div>
+      <%= form.label :address, "Address" %>
+      <%= form.text_area :address, :class => "form-control", :required => true %>
+    </div>
+        <div>
+      <%= form.label :phone, "Phone number" %>
+      <%= form.text_area :fullname, :class => "form-control", :required => true %>
+    </div>
+    <div>
+      <%= form.label :email, "E-mail address" %>
+      <%= form.text_area :email, :class => "form-control", :required => true %>
+    </div>
+    <br/>
+    <%= form.submit "SEND", class: "btn btn-light" %>
+    <br/>
+<% end %>
+</div>
