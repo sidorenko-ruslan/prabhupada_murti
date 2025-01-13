@@ -4,18 +4,26 @@
   <thead>
     <tr>
       <th scope="col">Духовное имя</th>
-      <th scope="col">Телефон</th>
+      <th scope="col">Инициация</th>
+      <th scope="col">Ф. И. О.</th>
       <th scope="col">Адрес</th>
-      <th scope="col">Мурти вручено</th>
+      <th scope="col">Телефон</th>
+      <th scope="col">Имейл</th>
+      <th scope="col">Я ученик?</th>
+      <th scope="col">Я даю контакт на ученика?</th>
     </tr>
   </thead>
   <tbody>
     <% @disciples.each do |disciple| %>
       <tr>
-        <td><%= disciple.name %></td>
-        <td><%= disciple.phone %></td>
+        <td><%= disciple.spritual_name %></td>
+        <td><%= disciple.initiation %></td>
+        <td><%= disciple.fullname %></td>
         <td><%= disciple.address %></td>
-        <td><%= disciple.murti ? "Да" : "Нет" %></td>
+        <td><%= disciple.phone %></td>
+        <td><%= disciple.email %></td>
+        <td><%= disciple.imdisciple ? "Да" : "Нет"  %></td>
+        <td><%= disciple.imgivingcontact ? "Да" : "Нет" %></td>
       </tr>
     <% end %>
   </tbody>
