@@ -23,11 +23,16 @@ class HomeController < ApplicationController
   end
 
   def disciple
-    @discipleInfo = DiscipleInfo.new
   end
   
   def add_disciple
-    
+    @discipleInfo = DiscipleInfo.new(discipleInfo_params)
+
+    if @discipleInfo.save
+      redirect_to root_path
+    else
+      render "disciple", status: 422
+    end
   end
 
   def make_purchase
