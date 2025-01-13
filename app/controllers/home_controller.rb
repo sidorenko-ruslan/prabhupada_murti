@@ -148,6 +148,10 @@ class HomeController < ApplicationController
     params.require(:sponsor).permit(:name, :phone, :address, :murti_amount, :telegram, :whatsapp)
   end
 
+  def discipleInfo_params
+    params.require(:discipleInfo).permit(:spritual_name, :initiation, :fullname, :address, :phone, :email, :imdisciple, :imgivingcontact)
+  end
+
   def find_previous_unpayed_order
     Order.find_by(client_name: order_params[:client_name],
       email: order_params[:email],
