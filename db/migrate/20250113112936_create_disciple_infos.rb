@@ -1,6 +1,6 @@
-class CreateDisciple < ActiveRecord::Migration[7.1]
+class CreateDiscipleInfos < ActiveRecord::Migration[7.1]
   def change
-    create_table :discipleinfos do |t|
+    create_table :disciple_infos do |t|
       t.string :spritual_name, null: false
       t.string :initiation
       t.string :fullname, null: false
