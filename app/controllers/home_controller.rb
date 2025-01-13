@@ -27,7 +27,7 @@ class HomeController < ApplicationController
   end
   
   def add_disciple
-    @discipleInfo = DiscipleInfo.new(discipleInfo_params)
+    @discipleInfo = DiscipleInfo.new(disciple_info_params)
 
     if @discipleInfo.save
       redirect_to root_path
@@ -148,8 +148,8 @@ class HomeController < ApplicationController
     params.require(:sponsor).permit(:name, :phone, :address, :murti_amount, :telegram, :whatsapp)
   end
 
-  def discipleInfo_params
-    params.require(:discipleInfo).permit(:spritual_name, :initiation, :fullname, :address, :phone, :email, :imdisciple, :imgivingcontact)
+  def disciple_info_params
+    params.require(:disciple_info).permit(:spritual_name, :initiation, :fullname, :address, :phone, :email, :imdisciple, :imgivingcontact)
   end
 
   def find_previous_unpayed_order
