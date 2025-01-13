@@ -15,32 +15,38 @@
       <%= form.label :spritual_name, "Spiritual name" %>
       <%= form.text_field :spritual_name, :class => "form-control", :required => true %>
     </div>
+    <br/>
     <div>
       <%= form.label :initiation, "Year and place of initiation (if don't know - leave it empty)" %>
       <%= form.text_field :initiation, :class => "form-control", :required => false %>
     </div>
+    <br/>
     <div>
       <%= form.label :fullname, "Full name" %>
       <%= form.text_field :fullname, :class => "form-control", :required => true %>
     </div>
+    <br/>
     <div>
       <%= form.label :address, "Address" %>
       <%= form.text_field :address, :class => "form-control", :required => true %>
     </div>
-        <div>
+    <br/>
+    <div>
       <%= form.label :phone, "Phone number" %>
       <%= form.text_field :fullname, :class => "form-control", :required => true %>
     </div>
+    <br/>
     <div>
       <%= form.label :email, "E-mail address" %>
       <%= form.text_field :email, :class => "form-control", :required => true %>
     </div>
+    <br/>
     <div>
-      <p>Are you SP disciple?</p>
-      <%= form.label :imdisciple, "Yes, i'm SP disciple" %>
-      <%= form.check_box :imdisciple, :class => "form-check-input" %>
-      <%= form.label :imgivingcontact, "No, i'm giving you contact of SP disciple" %>
-      <%= form.check_box :imgivingcontact, :class => "form-check-input" %>
+      <div>Are you SP disciple?</div>
+      <div><%= form.label :imdisciple, "Yes, i'm SP disciple" %>
+      <%= form.check_box :imdisciple, :class => "form-check-input" %></div>
+      <div><%= form.label :imgivingcontact, "No, i'm giving you contact of SP disciple" %>
+      <%= form.check_box :imgivingcontact, :class => "form-check-input" %></div>
     </div>
     <br/>
     <br/>
