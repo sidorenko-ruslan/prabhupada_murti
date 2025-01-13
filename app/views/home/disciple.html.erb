@@ -2,9 +2,9 @@
   <h1>Help us get a contact information of Srila Prabhupada disciples.</h1>
   <h2>Please give us a correct contact information, especially the phone numbers and emails, so we could contact you or Srila Prabhupada disciple to deliver murti.</h2>
   <%= form_with(model: @discipleInfo, url: "/add_disciple") do |form| %>
-    <% if @disciple.errors.any? %>
+    <% if @discipleInfo.errors.any? %>
       <ul>
-        <% @disciple.errors.full_messages.each do |message| %>
+        <% @discipleInfo.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
