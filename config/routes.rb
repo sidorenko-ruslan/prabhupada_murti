@@ -26,6 +26,8 @@ Rails.application.routes.draw do
   post "become_sponsor", to: "home#become_sponsor"
   post "make_purchase", to: "home#make_purchase"
   get "payment_form", to: "home#payment_form"
+  get "disciple", to: "home#disciple"
+  post "add_disciple", to: "home#add_disciple"
 
   # Defines the root path route ("/")
   root "home#index"
