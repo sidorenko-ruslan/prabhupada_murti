@@ -23,7 +23,7 @@ class HomeController < ApplicationController
   end
 
   def disciple
-    
+    @discipleInfo = DiscipleInfo.new
   end
   
   def add_disciple
