@@ -4,6 +4,6 @@ class Admin::DisciplesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @disciples = Disciple.all.order(:name)
+    @disciples = DiscipleInfo.all.order(:spritual_name)
   end
 end
