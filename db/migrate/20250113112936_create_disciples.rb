@@ -1,14 +1,14 @@
 class CreateDisciple < ActiveRecord::Migration[7.1]
   def change
-    create_table :disciples do |t|
-      t.string :spritual_name
+    create_table :discipleinfos do |t|
+      t.string :spritual_name, null: false
       t.string :initiation
-      t.string :fullname
+      t.string :fullname, null: false
       t.string :address
       t.string :phone
       t.string :email
-      t.boolean :imdisciple
-      t.boolean :imgivingcontact
+      t.boolean :imdisciple, default: false
+      t.boolean :imgivingcontact, default: false
 
       t.timestamps
     end
