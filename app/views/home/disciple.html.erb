@@ -1,3 +1,96 @@
+<div class="container create-sponsor-block">
+  <h1>Help us get a contact information of Srila Prabhupada disciples.</h1>
+  <br/>
+  <h3>Please give us a correct contact information, especially the phone numbers and emails, so we could contact you or Srila Prabhupada disciple to deliver murti.</h3>
+  <%= form_with(model: @discipleInfo, url: "/add_disciple") do |form| %>
+    <% if @discipleInfo.errors.any? %>
+      <ul>
+        <% @discipleInfo.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
+    <br/>
+    <div class="autocomplete">
+      <%= form.label :spritual_name, "Spiritual name" %>
+      <%= form.text_field :spritual_name, :class => "form-control", :required => true %>
+    </div>
+    <br/>
+    <div>
+      <%= form.label :initiation, "Year and place of initiation (if don't know - leave it empty)" %>
+      <%= form.text_field :initiation, :class => "form-control", :required => false %>
+    </div>
+    <br/>
+    <div>
+      <%= form.label :fullname, "Full name" %>
+      <%= form.text_field :fullname, :class => "form-control", :required => true %>
+    </div>
+    <br/>
+    <div>
+      <%= form.label :address, "Address" %>
+      <%= form.text_field :address, :class => "form-control", :required => true %>
+    </div>
+    <br/>
+    <div>
+      <%= form.label :phone, "Phone number" %>
+      <%= form.text_field :phone, :class => "form-control", :required => true %>
+    </div>
+    <br/>
+    <div>
+      <%= form.label :email, "E-mail address" %>
+      <%= form.text_field :email, :class => "form-control", :required => true %>
+    </div>
+    <br/>
+    <div>
+      <div>Are you SP disciple?</div>
+      <br/>
+      <div>
+        <%= form.check_box :imdisciple, :class => "form-check-input" %>
+        <%= form.label :imdisciple, "Yes, i'm SP disciple" %>
+      </div>
+      <div>
+        <%= form.check_box :imgivingcontact, :class => "form-check-input" %>
+        <%= form.label :imgivingcontact, "No, i'm giving you contact of SP disciple" %>
+      </div>
+    </div>
+    <br/>
+    <br/>
+    <%= form.submit "Send", class: "btn btn-light" %>
+    <br/>
+    <br/>
+    <br/>
+<% end %>
+</div>
+
+<style>
+  .autocomplete {
+    position: relative;
+    display: inline-block;
+  }
+  .autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    top: 100%;
+    left: 0;
+    right: 0;
+  }
+  .autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    border-bottom: 1px solid #d4d4d4;
+  }
+  .autocomplete-items div:hover {
+    background-color: #e9e9e9;
+  }
+  .autocomplete-active {
+    background-color: DodgerBlue !important;
+    color: #ffffff;
+  }
+</style>
 <script>
   function autocomplete(inp, arr) {
     var currentFocus;
@@ -68,66 +161,3 @@
   var spiritualNames = <%= raw DiscipleInfo.all.map { |d| d.spritual_name } %>;
   autocomplete(document.getElementById("disciple_info_spritual_name"), spiritualNames);
 </script>
-<div class="container create-sponsor-block">
-  <h1>Help us get a contact information of Srila Prabhupada disciples.</h1>
-  <br/>
-  <h3>Please give us a correct contact information, especially the phone numbers and emails, so we could contact you or Srila Prabhupada disciple to deliver murti.</h3>
-  <%= form_with(model: @discipleInfo, url: "/add_disciple") do |form| %>
-    <% if @discipleInfo.errors.any? %>
-      <ul>
-        <% @discipleInfo.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    <% end %>
-    <br/>
-    <div class="autocomplete">
-      <%= form.label :spritual_name, "Spiritual name" %>
-      <%= form.text_field :spritual_name, :class => "form-control", :required => true %>
-    </div>
-    <br/>
-    <div>
-      <%= form.label :initiation, "Year and place of initiation (if don't know - leave it empty)" %>
-      <%= form.text_field :initiation, :class => "form-control", :required => false %>
-    </div>
-    <br/>
-    <div>
-      <%= form.label :fullname, "Full name" %>
-      <%= form.text_field :fullname, :class => "form-control", :required => true %>
-    </div>
-    <br/>
-    <div>
-      <%= form.label :address, "Address" %>
-      <%= form.text_field :address, :class => "form-control", :required => true %>
-    </div>
-    <br/>
-    <div>
-      <%= form.label :phone, "Phone number" %>
-      <%= form.text_field :phone, :class => "form-control", :required => true %>
-    </div>
-    <br/>
-    <div>
-      <%= form.label :email, "E-mail address" %>
-      <%= form.text_field :email, :class => "form-control", :required => true %>
-    </div>
-    <br/>
-    <div>
-      <div>Are you SP disciple?</div>
-      <br/>
-      <div>
-        <%= form.check_box :imdisciple, :class => "form-check-input" %>
-        <%= form.label :imdisciple, "Yes, i'm SP disciple" %>
-      </div>
-      <div>
-        <%= form.check_box :imgivingcontact, :class => "form-check-input" %>
-        <%= form.label :imgivingcontact, "No, i'm giving you contact of SP disciple" %>
-      </div>
-    </div>
-    <br/>
-    <br/>
-    <%= form.submit "Send", class: "btn btn-light" %>
-    <br/>
-    <br/>
-    <br/>
-<% end %>
-</div>
