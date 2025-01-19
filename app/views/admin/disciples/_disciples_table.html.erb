@@ -4,6 +4,7 @@
   <table class="table table-striped table-bordered">
     <thead>
       <tr>
+        <!--
         <th scope="col">Номер анкеты</th>
         <th scope="col">Духовное имя</th>
         <th scope="col">Инициация</th>
@@ -15,6 +16,14 @@
         <th scope="col">Я даю контакт на ученика?</th>
         <th scope="col">Дата создания</th>
         <th scope="col">Дата редактирования</th>
+        -->
+        <% disciple_filter_columns.each do |name, title| %>
+          <% order = disciple_direction(name, params[:filter], params[:order]) %>
+          <% arror = disciple_arror(name, params[:filter], order) %>
+          <th scope="col">
+            <a class="table-filter-link link-secondary icon-link" href="<%= "#{admin_root_path}"%>?filter=<%= "#{name}" %>&order=<%= order %>"><i class="bi <%= arror %>"></i><%= "#{title}" %></a>
+          </th>
+        <% end %>
       </tr>
     </thead>
     <tbody>
