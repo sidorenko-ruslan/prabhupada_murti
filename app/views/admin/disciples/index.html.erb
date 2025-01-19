@@ -12,6 +12,8 @@
       <th scope="col">Имейл</th>
       <th scope="col">Я ученик?</th>
       <th scope="col">Я даю контакт на ученика?</th>
+      <th scope="col">Дата создания</th>
+      <th scope="col">Дата редактирования</th>
     </tr>
   </thead>
   <tbody>
@@ -26,6 +28,8 @@
         <td><%= disciple.email %></td>
         <td><%= disciple.imdisciple ? "Да" : "Нет"  %></td>
         <td><%= disciple.imgivingcontact ? "Да" : "Нет" %></td>
+        <td><%= disciple.created_at.strftime("%b %d, %Y at %I:%M %p") %></td>
+        <td><%= disciple.updated_at.strftime("%b %d, %Y at %I:%M %p") %></td>
       </tr>
     <% end %>
   </tbody>
