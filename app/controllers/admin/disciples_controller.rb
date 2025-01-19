@@ -7,6 +7,6 @@ class Admin::DisciplesController < ApplicationController
 
   def index
     recors_order = params[:filter] ? { params[:filter] => params[:order] } : DEFAULT_ORDER
-    @disciples = DiscipleInfo.order(:recors_order)
+    @disciples = DiscipleInfo.order(recors_order)
   end
 end
