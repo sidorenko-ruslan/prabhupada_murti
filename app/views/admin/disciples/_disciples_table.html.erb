@@ -21,7 +21,7 @@
           <% order = disciple_direction(name, params[:filter], params[:order]) %>
           <% arror = disciple_arror(name, params[:filter], order) %>
           <th scope="col">
-            <a class="table-filter-link link-secondary icon-link" href="<%= "#{admin_root_path}"%>?filter=<%= "#{name}" %>&order=<%= order %>"><i class="bi <%= arror %>"></i><%= "#{title}" %></a>
+            <a class="table-filter-link link-secondary icon-link" href="<%= "#{admin_root_path}"%>/disciples?filter=<%= "#{name}" %>&order=<%= order %>"><i class="bi <%= arror %>"></i><%= "#{title}" %></a>
           </th>
         <% end %>
       </tr>
