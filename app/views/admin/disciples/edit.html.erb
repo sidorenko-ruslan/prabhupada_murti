@@ -1,6 +1,12 @@
 <div class="container payment-block">
   <h1>Редактирование данных ученика Шрилы Прабхупады</h1>
   <%= form_with(model: [:admin, @disciple]) do |form| %>
+    <% if current_user.admin? %>
+      <div>
+        <%= form.label :fullname, "Ф. И. О." %>
+        <%= form.text_field :fullname, :class => "form-control", :required => false %>
+      </div>
+    <% end %>
     <%= form.submit "Изменить", class: "btn btn-primary" %>
   <% end %>
 </div>
