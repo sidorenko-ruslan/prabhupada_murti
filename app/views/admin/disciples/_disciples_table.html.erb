@@ -24,6 +24,7 @@
             <a class="table-filter-link link-secondary icon-link" href="<%= "#{admin_root_path}"%>/disciples?filter=<%= "#{name}" %>&order=<%= order %>"><i class="bi <%= arror %>"></i><%= "#{title}" %></a>
           </th>
         <% end %>
+        <th scope="col">Операции</th>
       </tr>
     </thead>
     <tbody>
@@ -40,6 +41,9 @@
           <td><%= disciple.imgivingcontact ? "Да" : "Нет" %></td>
           <td><%= disciple.created_at.strftime("%b %d, %Y at %I:%M %p") %></td>
           <td><%= disciple.updated_at.strftime("%b %d, %Y at %I:%M %p") %></td>
+          <td>
+            <a href="<%= edit_admin_disciple_path(disciple) %>">Редактировать</a>
+          </td>
         </tr>
       <% end %>
     </tbody>
