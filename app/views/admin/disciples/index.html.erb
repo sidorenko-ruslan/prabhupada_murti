@@ -3,6 +3,7 @@
 <table class="table">
   <thead>
     <tr>
+      <th scope="col">Номер анкеты</th>
       <th scope="col">Духовное имя</th>
       <th scope="col">Инициация</th>
       <th scope="col">Ф. И. О.</th>
@@ -16,6 +17,7 @@
   <tbody>
     <% @disciples.each do |disciple| %>
       <tr>
+        <td><%= disciple.id %></td>
         <td><%= disciple.spritual_name %></td>
         <td><%= disciple.initiation %></td>
         <td><%= disciple.fullname %></td>
