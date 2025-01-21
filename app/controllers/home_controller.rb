@@ -149,7 +149,7 @@ class HomeController < ApplicationController
   end
 
   def disciple_info_params
-    params.require(:disciple_info).permit(:spritual_name, :initiation, :fullname, :address, :phone, :email, :imdisciple, :imgivingcontact)
+    params.require(:disciple_info).permit(:spritual_name, :initiation, :fullname, :address, :phone, :email, :imdisciple, :imgivingcontact, :temple)
   end
 
   def find_previous_unpayed_order
