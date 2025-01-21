@@ -34,6 +34,11 @@
     </div>
     <br/>
     <div>
+      <%= form.label :temple, "Nearest ISKCON temple" %>
+      <%= form.text_field :temple, :class => "form-control", :required => true %>
+    </div>
+    <br/>
+    <div>
       <%= form.label :phone, "Phone number" %>
       <%= form.text_field :phone, :class => "form-control", :required => true %>
     </div>
