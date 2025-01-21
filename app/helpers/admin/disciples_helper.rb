@@ -6,6 +6,7 @@ module Admin::DisciplesHelper
       "initiation" => "Инициация",
       "fullname" => "Ф. И. О.",
       "address" => "Адрес",
+      "temple" => "Ближайший центр ИСККОН",
       "phone" => "Телефон",
       "email" => "Имейл",
       "imdisciple" => "Я ученик?",
