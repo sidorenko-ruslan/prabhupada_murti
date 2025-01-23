@@ -1,0 +1,31 @@
+<div class="container payment-block">
+  <h1>Создание данных инициации</h1>
+  <%= form_with(model: [:admin, @initiation]) do |form| %>
+    <% if @initiation.errors.any? %>
+      <ul>
+        <% @initiation.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
+    <% if current_user.admin? %>
+      <br/>
+      <div>
+        <%= form.label :name, "Spiritual name" %>
+        <%= form.text_field :name, :class => "form-control", :required => true %>
+      </div>
+      <br/>
+      <div>
+        <%= form.label :place, "Place and time" %>
+        <%= form.text_field :place, :class => "form-control", :required => true %>
+      </div>
+      <br/>
+      <div>
+        <%= form.label :status, "Status" %>
+        <%= form.text_field :status, :class => "form-control", :required => false %>
+      </div>
+      <br/>
+    <% end %>
+    <%= form.submit "Создать", class: "btn btn-primary" %>
+  <% end %>
+</div>
