@@ -169,6 +169,6 @@
     });
   }
 
-  var spiritualNames = <%= raw DiscipleInfo.all.map { |d| d.spritual_name } %>;
+  var spiritualNames = <%= raw Initiations.all.map { |d| d.name + " (" + d.place + ")" } %>;
   autocomplete(document.getElementById("disciple_info_spritual_name"), spiritualNames);
 </script>
