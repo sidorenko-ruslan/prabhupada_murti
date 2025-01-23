@@ -1,0 +1,31 @@
+<br/>
+<br/>
+<div class="table-responsive orders-table-container">
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <% initiation_filter_columns.each do |name, title| %>
+          <% order = initiation_direction(name, params[:filter], params[:order]) %>
+          <% arror = initiation_arror(name, params[:filter], order) %>
+          <th scope="col">
+            <a class="table-filter-link link-secondary icon-link" href="<%= "#{admin_root_path}"%>/initiations?filter=<%= "#{name}" %>&order=<%= order %>"><i class="bi <%= arror %>"></i><%= "#{title}" %></a>
+          </th>
+        <% end %>
+        <th scope="col">Операции</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @initiations.each do |initiation| %>
+        <tr>
+          <td><%= initiation.id %></td>
+          <td><%= initiation.name %></td>
+          <td><%= initiation.plase %></td>
+          <td><%= initiation.status %></td>
+          <td>
+            <a href="<%= edit_admin_initiation_path(initiation) %>">Редактировать</a>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
