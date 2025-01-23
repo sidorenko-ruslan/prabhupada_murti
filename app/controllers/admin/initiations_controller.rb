@@ -1,7 +1,7 @@
 class Admin::InitiationsController < ApplicationController
   layout "application_admin"
 
-  DEFAULT_ORDER = {created_at: :asc}
+  DEFAULT_ORDER = {id: :asc}
   
   before_action :authenticate_user!
 
