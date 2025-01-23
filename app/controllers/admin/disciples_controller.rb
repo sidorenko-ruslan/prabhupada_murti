@@ -17,7 +17,7 @@ class Admin::DisciplesController < ApplicationController
   def update
     @disciple = DiscipleInfo.find(params[:id])
     if @disciple.update disciple_info_params
-      redirect_to admin_root_path
+      redirect_to admin_disciples_path
     else
       render "edit", status: 422
     end
@@ -27,7 +27,7 @@ class Admin::DisciplesController < ApplicationController
     disciple = DiscipleInfo.find(params[:id])
     disciple.destroy!
 
-    redirect_to admin_root_path
+    redirect_to admin_disciples_path
   end
 
   private
