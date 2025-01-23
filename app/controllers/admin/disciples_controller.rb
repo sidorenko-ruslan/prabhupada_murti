@@ -7,16 +7,16 @@ class Admin::DisciplesController < ApplicationController
 
   def index
     recors_order = params[:filter] ? { params[:filter] => params[:order] } : DEFAULT_ORDER
-    @discipleInfos = DiscipleInfo.order(recors_order)
+    @disciples = DiscipleInfo.order(recors_order)
   end
 
   def edit
-    @discipleInfo = DiscipleInfo.find(params[:id])
+    @disciple = DiscipleInfo.find(params[:id])
   end
 
   def update
-    @discipleInfo = DiscipleInfo.find(params[:id])
-    if @discipleInfo.update disciple_info_params
+    @disciple = DiscipleInfo.find(params[:id])
+    if @disciple.update disciple_info_params
       redirect_to admin_root_path
     else
       render "edit", status: 422
