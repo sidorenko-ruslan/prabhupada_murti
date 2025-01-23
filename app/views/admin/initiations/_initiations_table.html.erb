@@ -22,7 +22,7 @@
           <td><%= initiation.place %></td>
           <td><%= initiation.status %></td>
           <td>
-            <a href="<%= edit_admin_initiation_path(initiation) %>">Редактировать</a>
+            <a href="<%= edit_admin_initiation_path(initiation) %>">Редактировать</a>  <a href="<%= destroy_admin_initiation_path(initiation) %>">Удалить</a>
           </td>
         </tr>
       <% end %>
