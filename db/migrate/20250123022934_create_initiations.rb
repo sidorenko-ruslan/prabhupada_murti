@@ -1,4 +1,4 @@
-class CreateInitiation < ActiveRecord::Migration[7.1]
+class CreateInitiations < ActiveRecord::Migration[7.1]
   def change
     create_table :initiations do |t|
       t.string :name, null: false
