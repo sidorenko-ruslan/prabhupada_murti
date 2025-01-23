@@ -1,6 +1,6 @@
 <div class="container payment-block">
   <h1>Редактирование данных ученика Шрилы Прабхупады</h1>
-  <%= form_with(model: [:admin, @disciple]) do |form| %>
+  <%= form_with(model: [:admin, @discipleInfo]) do |form| %>
     <% if current_user.admin? %>
       <div>
         <%= form.label :fullname, "Ф. И. О." %>
