@@ -1,6 +1,13 @@
 <div class="container payment-block">
   <h1>Редактирование данных инициации</h1>
   <%= form_with(model: [:admin, @initiation]) do |form| %>
+    <% if @initiation.errors.any? %>
+      <ul>
+        <% @initiation.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    <% end %>
     <% if current_user.admin? %>
       <br/>
       <div>
