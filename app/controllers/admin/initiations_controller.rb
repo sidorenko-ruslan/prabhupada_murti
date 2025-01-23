@@ -5,6 +5,19 @@ class Admin::InitiationsController < ApplicationController
   
   before_action :authenticate_user!
 
+  def new
+    @initiation = Initiation.new
+  end
+
+  def create
+    @initiation = Initiation.new(initiation_params)
+    if @initiation.save
+      redirect_to admin_initiations_path
+    else
+      render "new", status: 422
+    end
+  end
+  
   def index
     recors_order = params[:filter] ? { params[:filter] => params[:order] } : DEFAULT_ORDER
     @initiations = Initiation.order(recors_order)
