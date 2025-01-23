@@ -17,7 +17,7 @@ class Admin::InitiationsController < ApplicationController
   def update
     @initiation = Initiation.find(params[:id])
     if @initiation.update initiation_params
-      redirect_to admin_initiation_path
+      redirect_to admin_initiation_root_path
     else
       render "edit", status: 422
     end
@@ -27,7 +27,7 @@ class Admin::InitiationsController < ApplicationController
     initiation = Initiation.find(params[:id])
     initiation.destroy!
 
-    redirect_to admin_initiation_path
+    redirect_to admin_initiation_root_path
   end
 
   private
