@@ -1,0 +1,26 @@
+<div class="container payment-block">
+  <h1>Редактирование данных инициации</h1>
+  <%= form_with(model: [:admin, @initiation]) do |form| %>
+    <% if current_user.admin? %>
+      <br/>
+      <div>
+        <div class="autocomplete">
+          <%= form.label :name, "Spiritual name" %>
+          <%= form.text_field :name, :class => "form-control", :required => true %>
+        </div>
+      </div>
+      <br/>
+      <div>
+        <%= form.label :place, "Place and time" %>
+        <%= form.text_field :place, :class => "form-control", :required => true %>
+      </div>
+      <br/>
+      <div>
+        <%= form.label :status, "Status" %>
+        <%= form.text_field :status, :class => "form-control", :required => false %>
+      </div>
+      <br/>
+    <% end %>
+    <%= form.submit "Изменить", class: "btn btn-primary" %>
+  <% end %>
+</div>
