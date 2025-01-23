@@ -170,6 +170,6 @@
   }
 
   var spiritualNames = <%= raw Initiation.all.map { |d| d.name + " (" + d.place + ")" } %>;
-  var spiritualNameMap = <%= Initiation.all.map { |d| [d.name + " (" + d.place + ")", d.status] } %>;
+  var spiritualNameMap = <%= raw Initiation.all.map { |d| [d.name + " (" + d.place + ")", d.status] } %>;
   autocomplete(document.getElementById("disciple_info_spritual_name"), spiritualNames);
 </script>
