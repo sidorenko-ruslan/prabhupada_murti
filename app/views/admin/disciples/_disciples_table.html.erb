@@ -8,29 +8,29 @@
           <% order = disciple_direction(name, params[:filter], params[:order]) %>
           <% arror = disciple_arror(name, params[:filter], order) %>
           <th scope="col">
-            <a class="table-filter-link link-secondary icon-link" href="<%= "#{admin_root_path}"%>/disciple_infos?filter=<%= "#{name}" %>&order=<%= order %>"><i class="bi <%= arror %>"></i><%= "#{title}" %></a>
+            <a class="table-filter-link link-secondary icon-link" href="<%= "#{admin_root_path}"%>/disciples?filter=<%= "#{name}" %>&order=<%= order %>"><i class="bi <%= arror %>"></i><%= "#{title}" %></a>
           </th>
         <% end %>
         <th scope="col">Операции</th>
       </tr>
     </thead>
     <tbody>
-      <% @discipleInfos.each do |disciple_info| %>
+      <% @disciples.each do |disciple| %>
         <tr>
-          <td><%= disciple_info.id %></td>
-          <td><%= disciple_info.spritual_name %></td>
-          <td><%= disciple_info.initiation %></td>
-          <td><%= disciple_info.fullname %></td>
-          <td><%= disciple_info.address %></td>
-          <td><%= disciple_info.temple %></td>
-          <td><%= disciple_info.phone %></td>
-          <td><%= disciple_info.email %></td>
-          <td><%= disciple_info.imdisciple ? "Да" : "Нет"  %></td>
-          <td><%= disciple_info.imgivingcontact ? "Да" : "Нет" %></td>
-          <td><%= disciple_info.created_at.strftime("%b %d, %Y at %I:%M %p") %></td>
-          <td><%= disciple_info.updated_at.strftime("%b %d, %Y at %I:%M %p") %></td>
+          <td><%= disciple.id %></td>
+          <td><%= disciple.spritual_name %></td>
+          <td><%= disciple.initiation %></td>
+          <td><%= disciple.fullname %></td>
+          <td><%= disciple.address %></td>
+          <td><%= disciple.temple %></td>
+          <td><%= disciple.phone %></td>
+          <td><%= disciple.email %></td>
+          <td><%= disciple.imdisciple ? "Да" : "Нет"  %></td>
+          <td><%= disciple.imgivingcontact ? "Да" : "Нет" %></td>
+          <td><%= disciple.created_at.strftime("%b %d, %Y at %I:%M %p") %></td>
+          <td><%= disciple.updated_at.strftime("%b %d, %Y at %I:%M %p") %></td>
           <td>
-            <a href="<%= edit_admin_disciple_info_path(disciple_info) %>">Редактировать</a>
+            <a href="<%= edit_admin_disciple_path(disciple) %>">Редактировать</a>
           </td>
         </tr>
       <% end %>
