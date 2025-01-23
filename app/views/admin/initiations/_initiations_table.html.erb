@@ -22,7 +22,7 @@
           <td><%= initiation.place %></td>
           <td><%= initiation.status %></td>
           <td>
-            <a href="<%= edit_admin_initiation_path(initiation) %>">Редактировать</a>  <%= link_to 'Удалить', admin_initiation_path(initiation), :method => :delete %>
+            <a href="<%= edit_admin_initiation_path(initiation) %>">Редактировать</a>  <%= link_to 'Удалить', admin_initiation_path(initiation), method: :delete, data: {confirm: 'Are you sure?'} %>
           </td>
         </tr>
       <% end %>
