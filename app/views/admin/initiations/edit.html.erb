@@ -11,10 +11,8 @@
     <% if current_user.admin? %>
       <br/>
       <div>
-        <div class="autocomplete">
-          <%= form.label :name, "Spiritual name" %>
-          <%= form.text_field :name, :class => "form-control", :required => true %>
-        </div>
+        <%= form.label :name, "Spiritual name" %>
+        <%= form.text_field :name, :class => "form-control", :required => true %>
       </div>
       <br/>
       <div>
