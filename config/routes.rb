@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
     resources :orders, only: [:index, :edit, :update, :destroy]
     resources :users
-    resources :disciple_infos, only: [:index, :edit, :update, :destroy]
+    resources :disciples, only: [:index, :edit, :update, :destroy]
   end
 
   namespace :api do
