@@ -1,4 +1,4 @@
-class CreateInitiations < ActiveRecord::Migration[7.1]
+class AddInitiations < ActiveRecord::Migration[7.1]
   def change
     Initiation.create(name: "Abhiramah Dasa", place: "Detroit June 1970", status: "")
     Initiation.create(name: "Acala Dasa", place: "Brazil February 1976", status: "")
