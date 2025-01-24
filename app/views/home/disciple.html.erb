@@ -115,7 +115,7 @@
       this.parentNode.appendChild(a);
       for (i = 0; i < arr.length; i++) {
         for (j = 0; j < arr[i].length - val.length + 1; j++) {
-          if (arr[i].substr(j, val.length).toUpperCase() == val.toUpperCase()) {
+          if (val.length > 2 && arr[i].substr(j, val.length).toUpperCase() == val.toUpperCase()) {
             b = document.createElement("DIV");
             b.innerHTML = arr[i].substr(0, j);
             b.innerHTML += "<strong>" + arr[i].substr(j, val.length) + "</strong>";
