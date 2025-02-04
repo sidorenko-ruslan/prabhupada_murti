@@ -28,34 +28,46 @@
       <%= form.text_field :fullname, :class => "form-control", :required => true %>
     </div>
     <br/>
-    <table>
-      <tr>
-        <td colspan="2">
-          <%= form.label :address, "Street address" %>
-          <%= form.text_field :street, :required => true %>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <%= form.label :address, "Postal code" %>
-          <%= form.text_field :zip, :required => true %>
-        </td>
-        <td>
-          <%= form.label :address, "City" %>
-          <%= form.text_field :city, :required => true %>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <%= form.label :address, "State" %>
-          <%= form.text_field :state, :required => false %>
-        </td>
-        <td>
-          <%= form.label :address, "Country" %>
-          <%= form.text_field :country, :required => true %>  
-        </td>
-      </tr>
-    </table>
+    <div>
+      <table>
+        <tr>
+          <td colspan="2">
+            <div>
+              <%= form.label :address, "Street address" %>
+              <%= form.text_field :street, :class => "form-control", :required => true %>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div>
+              <%= form.label :address, "Postal code" %>
+              <%= form.text_field :zip, :class => "form-control", :required => true %>
+            </div>
+          </td>
+          <td>
+            <div>
+              <%= form.label :address, "City" %>
+              <%= form.text_field :city, :class => "form-control", :required => true %>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div>
+              <%= form.label :address, "State" %>
+              <%= form.text_field :state, :class => "form-control", :required => false %>
+            </div>
+          </td>
+          <td>
+            <div>
+              <%= form.label :address, "Country" %>
+              <%= form.text_field :country, :class => "form-control", :required => true %>  
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
     <br/>
     <div>
       <%= form.label :temple, "Nearest ISKCON temple" %>
