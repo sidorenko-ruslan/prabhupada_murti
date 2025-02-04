@@ -29,7 +29,7 @@
     </div>
     <br/>
     <div>
-      <table>
+      <table style="width: 100%">
         <tr>
           <td colspan="2">
             <div>
@@ -40,13 +40,13 @@
         </tr>
         <tr>
           <td>
-            <div>
+            <div style="margin-right: 5px">
               <%= form.label :address, "Postal code" %>
               <%= form.text_field :zip, :class => "form-control", :required => true %>
             </div>
           </td>
           <td>
-            <div>
+            <div style="margin-left: 5px">
               <%= form.label :address, "City" %>
               <%= form.text_field :city, :class => "form-control", :required => true %>
             </div>
@@ -54,13 +54,13 @@
         </tr>
         <tr>
           <td>
-            <div>
+            <div style="margin-right: 5px">
               <%= form.label :address, "State" %>
               <%= form.text_field :state, :class => "form-control", :required => false %>
             </div>
           </td>
           <td>
-            <div>
+            <div style="margin-left: 5px">
               <%= form.label :address, "Country" %>
               <%= form.text_field :country, :class => "form-control", :required => true %>  
             </div>
