@@ -28,28 +28,34 @@
       <%= form.text_field :fullname, :class => "form-control", :required => true %>
     </div>
     <br/>
-    <div>
-      <span>
-        <%= form.label :address, "Street address" %>
-        <%= form.text_field :street, :required => true %>
-      </span>
-      <span>
-        <%= form.label :address, "Postal code" %>
-        <%= form.text_field :zip, :required => true %>
-      </span>
-      <span>
-        <%= form.label :address, "City" %>
-        <%= form.text_field :city, :required => true %>
-      </span>
-      <span>
-        <%= form.label :address, "State" %>
-        <%= form.text_field :state, :required => false %>
-      </span>
-      <span>
-        <%= form.label :address, "Country" %>
-        <%= form.text_field :country, :required => true %>
-      </span>
-    </div>
+    <table>
+      <tr>
+        <td colspan="2">
+          <%= form.label :address, "Street address" %>
+          <%= form.text_field :street, :required => true %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= form.label :address, "Postal code" %>
+          <%= form.text_field :zip, :required => true %>
+        </td>
+        <td>
+          <%= form.label :address, "City" %>
+          <%= form.text_field :city, :required => true %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= form.label :address, "State" %>
+          <%= form.text_field :state, :required => false %>
+        </td>
+        <td>
+          <%= form.label :address, "Country" %>
+          <%= form.text_field :country, :required => true %>  
+        </td>
+      </tr>
+    </table>
     <br/>
     <div>
       <%= form.label :temple, "Nearest ISKCON temple" %>
