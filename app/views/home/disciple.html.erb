@@ -52,11 +52,11 @@
       <div>Are you SP disciple?</div>
       <br/>
       <div>
-        <%= form.check_box :imdisciple, :class => "form-check-input" %>
+        <%= form.check_box :imdisciple, :class => "form-check-input", :onclick => "radioChange(this);" %>
         <%= form.label :imdisciple, "Yes, i'm SP disciple" %>
       </div>
       <div>
-        <%= form.check_box :imgivingcontact, :class => "form-check-input" %>
+        <%= form.check_box :imgivingcontact, :class => "form-check-input", :onclick => "radioChange(this);" %>
         <%= form.label :imgivingcontact, "No, i'm giving you contact of SP disciple" %>
       </div>
     </div>
@@ -173,6 +173,14 @@
     document.addEventListener("click", function (e) {
         closeAllLists(e.target);
     });
+  }
+  function radioChange(button)
+  {
+    if(document.getElementById(button.id).checked == true) {
+      document.getElementById('disciple_info_imdisciple').checked = false;
+      document.getElementById('disciple_info_imgivingcontact').checked = false;
+      document.getElementById(button.id).checked = true;
+    }
   }
 
   var spiritualNames = <%= raw Initiation.all.map { |d| d.name + " (" + d.place + ")" } %>;
