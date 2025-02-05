@@ -33,6 +33,6 @@ class Admin::DisciplesController < ApplicationController
   private
 
   def disciple_info_params
-    params.require(:disciple_info).permit(:spritual_name, :initiation, :fullname, :address, :phone, :email, :imdisciple, :imgivingcontact, :temple)
+    params.require(:disciple_info).permit(:spritual_name, :initiation, :fullname, :street, :zip, :city, :state, :country, :phone, :email, :imdisciple, :imgivingcontact, :temple)
   end
 end
