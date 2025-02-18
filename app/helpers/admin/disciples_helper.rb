@@ -13,6 +13,7 @@ module Admin::DisciplesHelper
       "temple" => "Ближайший центр ИСККОН",
       "phone" => "Телефон",
       "email" => "Имейл",
+      "comment" => "Комментарий",
       "imdisciple" => "Я ученик?",
       "imgivingcontact" => "Я даю контакт на ученика?",
       "created_at" => "Дата создания",
