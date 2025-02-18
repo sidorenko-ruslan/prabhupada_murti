@@ -24,7 +24,7 @@
     </div>
     <br/>
     <div>
-      <%= form.label :fullname, "Full name" %>
+      <%= form.label :fullname, "Full name:" %>
       <%= form.text_field :fullname, :class => "form-control", :required => true %>
     </div>
     <br/>
@@ -33,7 +33,7 @@
         <tr>
           <td colspan="2">
             <div>
-              <%= form.label :street, "Street address" %>
+              <%= form.label :street, "Street address:" %>
               <%= form.text_field :street, :class => "form-control", :required => true %>
             </div>
           </td>
@@ -98,7 +98,7 @@
     </div>
     <br/>
     <br/>
-    <%= form.submit "Send", class: "btn btn-light" %>
+    <%= form.submit "SUBMIT", class: "btn btn-light" %>
     <br/>
     <button hidden="hidden" class="btn" type="button" id="disciple-modal-button" data-bs-toggle="modal" data-bs-target="#disciple-modal">Disciple modal</button>
     <br/>
