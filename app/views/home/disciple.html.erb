@@ -165,7 +165,9 @@
             b.innerHTML += arr[i].substr(j + val.length);
             b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
             b.addEventListener("click", function(e) {
-                inp.value = this.getElementsByTagName("input")[0].value;
+                var disciple = this.getElementsByTagName("input")[0].value;
+                document.getElementById('disciple_info_spritual_name').value = disciple.substring(0, disciple.indexOf("(") - 1);
+                document.getElementById('disciple_info_initiation').value = disciple.substring(disciple.indexOf("(") + 1, disciple.indexOf(")"));
                 document.getElementById("disciple-modal-button").click();
                 document.getElementById("disciple-name").innerHTML = inp.value;
                 var status = spiritualNameMap.find(e => e[0] == inp.value)[1];
