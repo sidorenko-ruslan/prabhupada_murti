@@ -169,8 +169,8 @@
                 document.getElementById('disciple_info_spritual_name').value = disciple.substring(0, disciple.indexOf("(") - 1);
                 document.getElementById('disciple_info_initiation').value = disciple.substring(disciple.indexOf("(") + 1, disciple.indexOf(")"));
                 document.getElementById("disciple-modal-button").click();
-                document.getElementById("disciple-name").innerHTML = inp.value;
-                var status = spiritualNameMap.find(e => e[0] == inp.value)[1];
+                document.getElementById("disciple-name").innerHTML = disciple;
+                var status = spiritualNameMap.find(e => e[0] == disciple)[1];
                 document.getElementById("disciple-status").innerHTML = (!status || status.length === 0) ? "No information for this delivery." : status;
                 closeAllLists();
             });
