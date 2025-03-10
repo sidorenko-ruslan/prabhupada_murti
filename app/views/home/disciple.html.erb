@@ -24,6 +24,21 @@
     </div>
     <br/>
     <div>
+      <div>Below provide delivery information either for the disciple of Srila Prabhupada selected above or for yourself, if you are going to deliver the murti to him/her personally.</div>
+      <br/>
+      <div>Please specify whose contact information you are submitting below.</div>
+      <br/>
+      <div>
+        <%= form.check_box :imdisciple, :class => "form-check-input", :onclick => "radioChange(this);" %>
+        <%= form.label :imdisciple, "For the disciple of Srila Prabhupada selected above" %>
+      </div>
+      <div>
+        <%= form.check_box :imgivingcontact, :class => "form-check-input", :onclick => "radioChange(this);" %>
+        <%= form.label :imgivingcontact, "For myself so I could deliver the murti to him/her personally" %>
+      </div>
+    </div>
+    <br/>
+    <div>
       <%= form.label :fullname, "Full name:" %>
       <%= form.text_field :fullname, :class => "form-control", :required => true %>
     </div>
@@ -87,19 +102,6 @@
     <div>
       <%= form.label :comment, "Comment (optional):" %>
       <%= form.text_field :comment, :class => "form-control", :required => false %>
-    </div>
-    <br/>
-    <div>
-      <div>Whose contact information are you submitting above?</div>
-      <br/>
-      <div>
-        <%= form.check_box :imdisciple, :class => "form-check-input", :onclick => "radioChange(this);" %>
-        <%= form.label :imdisciple, "The Srila Prabhupada’s disciple’s" %>
-      </div>
-      <div>
-        <%= form.check_box :imgivingcontact, :class => "form-check-input", :onclick => "radioChange(this);" %>
-        <%= form.label :imgivingcontact, "My own" %>
-      </div>
     </div>
     <br/>
     <br/>
