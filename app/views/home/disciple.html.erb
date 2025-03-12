@@ -28,16 +28,16 @@
       <%= form.label :imspouse, "select if married to a disciple of Srila Prabhupada" %>
     </div>
     <br/>
-    <div>
+    <div class="spouse" hidden="hidden">
       <div class="autocomplete">
         <%= form.label :spouse_spritual_name, "Spiritual name of the spouse (select from the list as you type):" %>
         <%= form.text_field :spouse_spritual_name, :class => "form-control", :required => false %>
       </div>
-    </div>
-    <br/>
-    <div>
-      <%= form.label :spouse_initiation, "Year and place of initiation (optional):" %>
-      <%= form.text_field :spouse_initiation, :class => "form-control", :required => false %>
+      <br/>
+      <div>
+        <%= form.label :spouse_initiation, "Year and place of initiation (optional):" %>
+        <%= form.text_field :spouse_initiation, :class => "form-control", :required => false %>
+      </div>
     </div>
     <br/>
     <div>
@@ -242,6 +242,14 @@
       document.getElementById('disciple_info_imdisciple').checked = false;
       document.getElementById('disciple_info_imgivingcontact').checked = false;
       document.getElementById(button.id).checked = true;
+    }
+  }
+  function spouseChange(button)
+  {
+    if(document.getElementById(button.id).checked == true) {
+      document.getElementsByClassName("spouse")[0].removeAttribute('hidden');
+    } else {
+      document.getElementsByClassName("spouse")[0].setAttribute('hidden', 'hidden');
     }
   }
 
