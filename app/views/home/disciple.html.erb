@@ -122,7 +122,7 @@
     <br/>
     <br/>
     <div style="text-align: center">
-      <%= form.submit "SUBMIT", class: "btn btn-light submit-disciple" %>
+      <%= form.submit "SUBMIT", class: "btn btn-light", style: "width: 150px" %>
     </div>
     <br/>
     <button hidden="hidden" class="btn" type="button" id="disciple-modal-button" data-bs-toggle="modal" data-bs-target="#disciple-modal">Disciple modal</button>
@@ -137,9 +137,6 @@
 <%= render "home/partials/disciple_modal" %>
 
 <style>
-  .submit-disciple {
-    width: 150px;
-  }
   .autocomplete {
     position: relative;
     display: inline-block;
