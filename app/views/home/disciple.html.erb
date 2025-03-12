@@ -24,6 +24,23 @@
     </div>
     <br/>
     <div>
+      <%= form.check_box :imspouse, :class => "form-check-input", :onclick => "spouseChange(this);" %>
+      <%= form.label :imspouse, "select if married to a disciple of Srila Prabhupada" %>
+    </div>
+    <br/>
+    <div>
+      <div class="autocomplete">
+        <%= form.label :spouse_spritual_name, "Spiritual name of the spouse (select from the list as you type):" %>
+        <%= form.text_field :spouse_spritual_name, :class => "form-control", :required => false %>
+      </div>
+    </div>
+    <br/>
+    <div>
+      <%= form.label :spouse_initiation, "Year and place of initiation (optional):" %>
+      <%= form.text_field :spouse_initiation, :class => "form-control", :required => false %>
+    </div>
+    <br/>
+    <div>
       <div>Below, provide delivery information either for the disciple of Srila Prabhupada selected above or for yourself, if you are going to deliver the murti to him/her personally.</div>
       <br/>
       <div>Please specify whose contact information you are submitting below:</div>
