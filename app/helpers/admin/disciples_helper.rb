@@ -16,7 +16,7 @@ module Admin::DisciplesHelper
       "comment" => "Комментарий",
       "imdisciple" => "Я ученик?",
       "imgivingcontact" => "Я даю контакт на ученика?",
-      "imspouse" => "Я супруг/супруга",
+      "imspouse" => "Я супруг/супруга ученика ШП",
       "spouse_spritual_name" => "Ф. И. О. супруга/супруги",
       "spouse_initiation" => "Инициация супруга/супруги",
       "created_at" => "Дата создания",
