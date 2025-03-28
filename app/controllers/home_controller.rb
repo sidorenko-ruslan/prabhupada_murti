@@ -172,10 +172,9 @@ class HomeController < ApplicationController
   end
 
   def set_language
-    <% lang = params[:lang]&.to_sym || cookies[:lang]&.to_sym || best_locale_from_request %>
-    lang = :ru
+    lang = params[:lang]&.to_sym || cookies[:lang]&.to_sym || best_locale_from_request
     cookies.permanent[:lang] = lang
-    @language = lang == :ru ? "Рус" : "Eng"
+    @language = lang == :ru ? "Рус" : "Рус"
     if I18n.available_locales.include?(lang)
       I18n.locale = lang
     end
