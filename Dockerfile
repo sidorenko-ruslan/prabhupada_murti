@@ -38,7 +38,3 @@ RUN bundle install && \
 # Install node modules
 COPY package.json yarn.lock ./
 RUN yarn install --frozen-lockfile
-
-# Start the server by default, this can be overwritten at runtime
-EXPOSE 3000
-CMD ["./bin/rails", "server"]
