@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  match "*path", to: redirect("https://murti.world/giftprabhupada"), via: :all
+  
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
