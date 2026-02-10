@@ -38,7 +38,3 @@ RUN bundle install && \
 # Install node modules
 COPY package.json yarn.lock ./
 RUN yarn install --frozen-lockfile
-
-EXPOSE 3000
-
-CMD ["nginx", "-g", "daemon off;"]
