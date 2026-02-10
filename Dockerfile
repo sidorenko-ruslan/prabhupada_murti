@@ -1,70 +1,26 @@
-# # syntax = docker/dockerfile:1
-#
-## Make sure RUBY_VERSION matches the Ruby version in .ruby-version and Gemfile
-#ARG RUBY_VERSION=3.3.4
-#FROM registry.docker.com/library/ruby:$RUBY_VERSION-slim as base
-#
-## Rails app lives here
-#WORKDIR /rails
-#
-## Set production environment
-#ENV RAILS_ENV="production" \
-#    BUNDLE_DEPLOYMENT="1" \
-#    BUNDLE_PATH="/usr/local/bundle" \
-#    BUNDLE_WITHOUT="development"
-#
-## Throw-away build stage to reduce size of final image
-#FROM base as build
-#
-## Install packages needed to build gems and node modules
-#RUN apt-get update -qq && \
-#    apt-get install --no-install-recommends -y build-essential curl git libpq-dev libvips node-gyp pkg-config python-is-python3
-#
-## Install JavaScript dependencies
-#ARG NODE_VERSION=20.16.0
-#ARG YARN_VERSION=1.22.22
-#ENV PATH=/usr/local/node/bin:$PATH
-#RUN curl -sL https://github.com/nodenv/node-build/archive/master.tar.gz | tar xz -C /tmp/ && \
-#    /tmp/node-build-master/bin/node-build "${NODE_VERSION}" /usr/local/node && \
-#    npm install -g yarn@$YARN_VERSION && \
-#    rm -rf /tmp/node-build-master
-#
-## Install application gems
-#COPY Gemfile Gemfile.lock ./
-#RUN bundle install && \
-#    rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git && \
-#    bundle exec bootsnap precompile --gemfile
-#
-## Install node modules
-#COPY package.json yarn.lock ./
-#RUN yarn install --frozen-lockfile
+ # syntax = docker/dockerfile:1
 
-
-# syntax = docker/dockerfile:1
-
-# ---------------------------
-# Stage 1: базовый образ с Ruby
-# ---------------------------
+# Make sure RUBY_VERSION matches the Ruby version in .ruby-version and Gemfile
 ARG RUBY_VERSION=3.3.4
-FROM registry.docker.com/library/ruby:$RUBY_VERSION-slim AS base
+FROM registry.docker.com/library/ruby:$RUBY_VERSION-slim as base
 
-WORKDIR /app
+# Rails app lives here
+WORKDIR /rails
 
+# Set production environment
 ENV RAILS_ENV="production" \
     BUNDLE_DEPLOYMENT="1" \
     BUNDLE_PATH="/usr/local/bundle" \
     BUNDLE_WITHOUT="development"
 
-# ---------------------------
-# Stage 2: build
-# ---------------------------
-FROM base AS build
+# Throw-away build stage to reduce size of final image
+FROM base as build
 
-# Устанавливаем зависимости для Ruby и Node
+# Install packages needed to build gems and node modules
 RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y build-essential curl git libpq-dev libvips node-gyp pkg-config python-is-python3
 
-# Node и Yarn
+# Install JavaScript dependencies
 ARG NODE_VERSION=20.16.0
 ARG YARN_VERSION=1.22.22
 ENV PATH=/usr/local/node/bin:$PATH
@@ -73,52 +29,32 @@ RUN curl -sL https://github.com/nodenv/node-build/archive/master.tar.gz | tar xz
     npm install -g yarn@$YARN_VERSION && \
     rm -rf /tmp/node-build-master
 
-# Копируем Gemfile и устанавливаем gems
+# Install application gems
 COPY Gemfile Gemfile.lock ./
 RUN bundle install && \
-    rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git
+    rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git && \
+    bundle exec bootsnap precompile --gemfile
 
-# Копируем node модули
+# Install node modules
 COPY package.json yarn.lock ./
 RUN yarn install --frozen-lockfile
-
-# Копируем весь проект
-COPY . .
-
-# Precompile assets
-RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
-
-# ---------------------------
-# Stage 3: финальный образ с nginx
-# ---------------------------
-FROM registry.docker.com/library/ruby:$RUBY_VERSION-slim
-
-WORKDIR /app
-
-# Устанавливаем runtime зависимости и nginx
-RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y curl postgresql-client libsqlite3-0 libvips nginx && \
-    rm -rf /var/lib/apt/lists/*
-
-# Копируем артефакты из build stage
-COPY --from=build /usr/local/bundle /usr/local/bundle
-COPY --from=build /app /app
-
-# Создаем конфиг nginx для глобального редиректа
-RUN echo 'server {\n\
-    listen 3000;\n\
-    server_name _;\n\
-    location / {\n\
-        return 301 https://murti.world/giftprabhupada;\n\
-    }\n\
-}' > /etc/nginx/conf.d/default.conf
-
-# expose порт
-EXPOSE 3000
-
-# Запускаем nginx на переднем плане
-CMD ["nginx", "-g", "daemon off;"]
 
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
 CMD ["./bin/rails", "server"]
+
+
+
+
+RUN apt-get update -qq && apt-get install -y nginx && rm -rf /var/lib/apt/lists/*
+
+RUN echo 'server {
+    listen 3000;
+    server_name _;
+    location / {
+        return 301 https://murti.world/giftprabhupada;
+    }
+}' > /etc/nginx/conf.d/default.conf
+
+EXPOSE 3000
+CMD ["nginx", "-g", "daemon off;"]
