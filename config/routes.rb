@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  match "*path", to: redirect("https://murti.world/giftprabhupada"), via: :all
+  match "*path",
+        to: redirect("https://murti.world/giftprabhupada", status: 301),
+        via: :all
 end
 
 #Rails.application.routes.draw do
