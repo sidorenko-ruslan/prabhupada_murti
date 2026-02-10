@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
-  match "*path",
-        to: redirect("https://murti.world/giftprabhupada", status: 301),
-        via: :all
+  match "*path", to: proc { |_env|
+    [
+      301,
+      { "Location" => "https://murti.world/giftprabhupada",
+        "Content-Type" => "text/plain" },
+      []
+    ]
+  }, via: :all
 end
 
 #Rails.application.routes.draw do
