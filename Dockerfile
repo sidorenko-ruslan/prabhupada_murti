@@ -48,13 +48,15 @@ CMD ["./bin/rails", "server"]
 
 RUN apt-get update -qq && apt-get install -y nginx && rm -rf /var/lib/apt/lists/*
 
-RUN echo 'server {
+RUN cat <<'EOF' > /etc/nginx/conf.d/default.conf
+server {
     listen 3000;
     server_name _;
     location / {
         return 301 https://murti.world/giftprabhupada;
     }
-}' > /etc/nginx/conf.d/default.conf
+}
+EOF
 
 EXPOSE 3000
 CMD ["nginx", "-g", "daemon off;"]
