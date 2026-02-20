@@ -5,6 +5,8 @@ function numberWithSpaces(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }
 
+console.log("Changes!");
+
 let inputBuyMurtiCount = document.getElementById("buy-murti-count");
 let langValue = document.getElementById("input-lang").value;
 
